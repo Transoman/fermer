@@ -1,5 +1,50 @@
 .header
+  background: #fff
   .container
     display: flex
     align-items: center
   &__top
+    padding: 8px 0
+    border-bottom: 1px solid $border-color
+  &__bottom
+    position: relative
+    padding: 10px 0
+    .container
+      position: relative
+  &__nav
+    width: 44%
+    +r(992)
+      display: none
+  &__phone
+    margin-left: auto
+  &__logo
+    margin-right: 50px
+    +r(1200)
+      margin-right: 20px
+    +r(480)
+      max-width: 120px
+  &__menu
+    margin-right: 40px
+    +r(1200)
+      margin-right: 20px
+    +r(992)
+      display: none
+  &__small-search
+    +r(992)
+      margin-left: auto
+    +r(567)
+      display: none
+  &__small-cart
+    margin-left: auto
+    margin-right: 50px
+    +r(1200)
+      margin-right: 20px
+    +r(992)
+      margin-left: 20px
+    +r(567)
+      display: none
+  &__user-menu
+    +r(992)
+      margin-right: 40px
+    +r(567)
+      margin-left: auto

@@ -1,0 +1,36 @@
+.small-cart
+  display: flex
+  align-items: center
+  &:hover
+    .small-cart
+      &__sum
+        color: $accent
+  &__left
+    position: relative
+    width: 27px
+    height: 20px
+    margin-right: 5px
+  &__icon
+    width: 18px
+    height: 16px
+    fill: $gray
+    vertical-align: baseline
+  &__count
+    position: absolute
+    right: 0
+    width: 14px
+    height: 14px
+    border-radius: 50%
+    background-color: $accent
+    font-size: 8px
+    font-weight: 700
+    color: #fff
+    text-align: center
+  &__sum
+    font-size: 14px
+    font-weight: 600
+    color: $header-color
+    +trans
+  &__currency
+    font-size: 10px
+    text-transform: uppercase

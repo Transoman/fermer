@@ -11,19 +11,19 @@ header.header
             a(href="#") Контакты
 
       .small-location.header__small-location
-        a(href="#")
+        a(href="#").small-location__link
           +icon('location', 'small-location__icon')
           span.small-location__title Московская обл.
 
       .phone.header__phone
         +icon('phone', 'phone__icon')
-        a(href="tel:+79704586435") +7 (970) 458 64 35 
+        a(href="tel:+79704586435").phone__tel +7 (970) 458 64 35 
         span.phone__schedule (с 7 до 22 ежедневно)
 
   .header__bottom
     .container
       .logo.header__logo
-        a(href="./")
+        a(href="./").logo__link
           img(src="static/images/general/logo.svg", width="150", alt="ГлобаФермер")
         span.logo__desc Электронный <br>Фермерский Рынок
 
@@ -33,17 +33,19 @@ header.header
         li
           a(href="#") Фермеры
 
-      .small-search
+      .small-search.header__small-search
         a(href="#").small-search__link
           +icon('search', 'small-search__icon')
         .small-search__body
+          
+          button.small-search__close
           form(action="#").small-search__form
             .form-group
-              input(type="text" placeholder="Искать...", required)
-              button(type="submit").small-search__form-sumbit
+              input(type="text" placeholder="Поиск...", required)
+              button(type="submit").small-search__form-submit
                 +icon('search', 'small-search__form-icon')
 
-      .small-cart.header__small-cart
+      a(href="#").small-cart.header__small-cart
         .small-cart__left
           +icon('cart', 'small-cart__icon')
           span.small-cart__count 2
@@ -53,5 +55,8 @@ header.header
 
       .user-menu.header__user-menu
         .user-menu__btns
-          a(href="#").btn.btn-transp Вход
+          a(href="#").btn.btn--transp Вход
           a(href="#").btn Регистрация
+
+      button.nav-toggle
+        span.nav-toggle__line

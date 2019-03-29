@@ -1,0 +1,26 @@
+.user-menu
+  &__btns
+    +r(480)
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+    & > *:not(:last-child)
+      margin-right: 10px
+      +r(480)
+        margin-right: 0
+    .btn
+      padding: 10px 20px
+      +r(767)
+        padding: 0
+        background: none
+        color: $accent
+        vertical-align: baseline
+        &:hover, &:focus
+          color: $light-green
+      &--transp
+        padding: 9px 25px
+        +r(767)
+          border: 0
+          color: $header-color
+          &:hover, &:focus
+            color: $accent

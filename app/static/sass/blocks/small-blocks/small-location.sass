@@ -1,0 +1,21 @@
+.small-location
+  white-space: nowrap
+  &:hover
+    .small-location
+      &__icon
+        fill: $accent
+  &__link
+    display: flex
+    align-items: center
+  &__icon
+    width: 13px
+    height: 16px
+    fill: $gray
+    margin-right: 10px
+    +trans
+  &__title
+    font-size: 12px
+    font-weight: 600
+    text-transform: uppercase
+    +r(480)
+      font-size: 11px
