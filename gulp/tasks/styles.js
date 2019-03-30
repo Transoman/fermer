@@ -45,6 +45,7 @@ module.exports = function () {
                     cascade: false
                 })
             ]))
+            .pipe(gp.groupCssMediaQueries())
             .pipe(gp.csscomb())
             .pipe(gp.csso())
             .pipe(gp.rename('styles.min.css'))
