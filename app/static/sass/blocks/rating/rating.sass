@@ -1,0 +1,25 @@
+.rating
+  display: flex
+  align-items: center
+  &__group
+    position: relative
+    overflow: hidden
+    display: flex
+    align-items: center
+    & > *:not(:last-child)
+      margin-right: 5px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+  &__star
+    display: block
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background-color: $rating-bg
+    &--fill
+      background-color: $rating-fill-bg
+  &__caption
+    margin-left: 10px

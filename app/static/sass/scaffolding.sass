@@ -125,3 +125,26 @@ section
 
 .section-title
   margin-bottom: 40px
+
+.section-head
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin-bottom: 40px
+  +r(992)
+    flex-direction: column
+    align-items: stretch
+  &__right
+    margin-left: auto
+    padding-left: 20px
+    +r(992)
+      padding: 0
+      margin-left: 0
+  .section-title
+    margin: 0
+    +r(992)
+      margin-bottom: 20px
+      text-align: center
+
+.text-center
+  text-align: center

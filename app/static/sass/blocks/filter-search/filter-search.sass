@@ -71,7 +71,7 @@
       flex-direction: column
     & > *:not(:last-child)
       margin-right: 10px
-      +r(576)
+      +r(480)
         margin-right: 0
         margin-bottom: 10px
     &-icon
@@ -85,31 +85,3 @@
         .filter-search
           &__btns-icon
             fill: #fff
-  &__list
-    display: none
-    position: absolute
-    left: 0
-    top: calc(100% + 10px)
-    background-color: #fff
-    border-radius: 5px
-    padding: 0
-    margin: 0
-    list-style: none
-    z-index: 1
-    &::before
-      content: ''
-      width: 0
-      height: 0
-      border-style: solid
-      border-width: 0 5px 5px 5px
-      border-color: transparent transparent #fff transparent
-      position: absolute
-      top: -5px
-      right: 10px
-    a
-      display: block
-      padding: 10px 15px
-      font-size: 14px
-      color: $gray
-      &:hover
-        background-color: $hover-bg

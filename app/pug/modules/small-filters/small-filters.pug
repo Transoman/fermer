@@ -1,0 +1,35 @@
+.small-filters
+  .small-filters__category
+    .small-filters__category-head
+      button(type="button").small-filters__btn Категория товаров
+    .small-filters__category-body
+      ul.dropdown-list
+        li
+          a(href="#") Молочные продукты
+        li
+          a(href="#") Мясо и мясные изделия
+        li
+          a(href="#") Птица и яйца
+        li
+          a(href="#") Рыба и морепродукты
+        li
+          a(href="#") Зелень, овощи, фрукты, ягоды
+        li
+          a(href="#") Домашние сладости
+        li
+          a(href="#") Домашние заготовки
+        li
+          a(href="#") Готовая еда
+        li
+          a(href="#") Почти готовая еда
+        li
+          a(href="#") Бакалея
+
+  .small-filters__radius
+    .small-filters__radius-head
+      button(type="button").small-filters__btn Радиус, км
+    .small-filters__radius-body
+  .small-filters__btns
+    a(href="#").small-filters__link
+      +icon('location', 'small-filters__link-icon')
+      span Показать на карте

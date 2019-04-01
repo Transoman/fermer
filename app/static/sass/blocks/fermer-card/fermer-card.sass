@@ -1,0 +1,91 @@
+.fermer-card
+  margin-bottom: 30px
+  &__inner
+    display: flex
+    flex-direction: column
+    height: 100%
+    border-radius: 5px
+    +trans
+    &:hover
+      box-shadow: 0 15px 30px rgba($header-color, 0.15)
+      .fermer-card
+        &__head
+          background: linear-gradient(to right, $accent, $light-green)
+          &::before
+            opacity: 0.4
+          .rating
+            &__star
+              background-color: $hover-color
+              &--fill
+                background-color: $rating-fill-bg
+            &__caption
+              color: $hover-color
+        &__title
+          a
+            color: #fff
+        &__list
+          color: $main-color
+        &__body
+          border-color: transparent
+  &__img-wrap
+    border-radius: 5px 5px 0 0
+    overflow: hidden
+    img
+      display: block
+      width: 100%
+  &__head
+    position: relative
+    padding: 15px 20px
+    background-color: #fff
+    border-radius: 5px
+    margin: -40px 0 30px
+    box-shadow: 0 5px 15px rgba($header-color, 0.15)
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      right: 10px
+      top: 10px
+      width: 60px
+      height: 60px
+      background: url(../images/general/icon-field.svg) no-repeat center / contain
+      z-index: -1
+  &__title
+    margin-bottom: 0
+    font-size: 16px
+    a
+      color: $header-color
+  &__body
+    flex-grow: 1
+    padding: 0 20px 5px
+    font-size: 14px
+    border: 1px solid $border-color
+    border-top: 0
+    +trans
+    border-radius: 0 0 5px 5px
+  &__label
+    margin-bottom: 5px
+    font-family: $ax-font
+    color: $header-color
+  &__list
+    margin: 0 0 20px
+    padding: 0
+    list-style: none
+    column-count: 2
+    +r(480)
+      column-count: 1
+    li
+      position: relative
+      padding-left: 10px
+      margin-bottom: 5px
+      &::before
+        content: ''
+        position: absolute
+        top: 10px
+        left: 0
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        background-color: $accent
+    &-last
+      color: $accent

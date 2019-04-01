@@ -1,0 +1,55 @@
+.small-filters
+  display: flex
+  align-items: center
+  +r(576)
+    flex-direction: column
+    align-items: flex-start
+  &__category
+    padding-right: 20px
+    border-right: 1px solid $border-color
+    +r(576)
+      padding: 0
+      border: 0
+  &__radius
+    border-right: 1px solid $border-color
+    padding-right: 20px
+    padding-left: 20px
+    +r(576)
+      padding: 0
+      border: 0
+  &__btn
+    position: relative
+    background: none
+    border: none
+    padding: 0
+    font-size: 14px
+    color: $gray
+    +trans
+    white-space: nowrap
+    &::after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      margin-left: 10px
+      width: 8px
+      height: 4px
+      background: url(../images/general/icon-angle-down.svg) no-repeat center / contain
+    &:hover, &:focus
+      outline: none
+      color: $accent
+  &__btns
+    padding-left: 20px
+    +r(576)
+      padding: 0
+  &__link
+    font-size: 14px
+    font-weight: 600
+    color: $accent
+    text-decoration: underline
+    &-icon
+      width: 14px
+      height: 16px
+      fill: $accent
+      margin-right: 10px
+      &:hover, &:focus
+        color: $light-green
