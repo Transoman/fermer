@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "autoprefixer": "^9.4.5",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
     "del": "^3.0.0",
@@ -45,9 +48,11 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.2.1",
+    "gsap": "^2.1.2",
     "jquery": "^3.3.1",
     "jquery-popup-overlay": "^2.1.0",
     "jquery-validation": "^1.19.0",
+    "rellax": "^1.9.1",
     "svg4everybody": "^2.1.9"
   }
 }

@@ -2,7 +2,8 @@
 
 global.jQuery = require('jquery');
 var svg4everybody = require('svg4everybody'),
-    popup = require('jquery-popup-overlay');
+    popup = require('jquery-popup-overlay'),
+    Rellax = require('rellax');
 
 jQuery(document).ready(function($) {
 
@@ -36,6 +37,15 @@ jQuery(document).ready(function($) {
 
   $('.small-search__close').click(function() {
     $('.small-search__body').removeClass('is-active');
+  });
+
+  var rellax = new Rellax('.rellax', {
+    speed: -2,
+    center: false,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
   });
 
   // SVG
