@@ -47,6 +47,10 @@ h1
 
 h2
   font-size: 36px
+  +r(992)
+    font-size: 28px
+  +r(576)
+    font-size: 22px
 
 h3
   font-size: 18px
@@ -61,6 +65,9 @@ a
 
 section
   position: relative
+  padding: 90px 0 100px
+  +r(767)
+    padding: 50px 0
 
 /* Hidden element */
 .visually-hidden
@@ -115,3 +122,6 @@ section
   &--white
     background: #fff
     color: $header-color
+
+.section-title
+  margin-bottom: 40px
