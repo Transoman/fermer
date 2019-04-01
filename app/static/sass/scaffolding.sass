@@ -35,9 +35,15 @@ img
 h1, h2, h3, h4, h5, h6
   font-family: $ax-font
   color: $header-color
+  font-weight: 600
+  line-height: 1.3
 
 h1
   font-size: 40px
+  +r(992)
+    font-size: 32px
+  +r(576)
+    font-size: 24px
 
 h2
   font-size: 36px
@@ -52,6 +58,9 @@ a
     color: $accent
     outline: none
     text-decoration: none
+
+section
+  position: relative
 
 /* Hidden element */
 .visually-hidden
@@ -90,6 +99,7 @@ a
   &:focus
     background-image: linear-gradient(to right, $accent, $accent)
     color: #fff
+    outline: none
   &[disabled]
     background-color: #e5e5e5
     cursor: not-allowed
@@ -102,3 +112,6 @@ a
     padding-bottom: 14px
     &:hover, &:focus
       background: $accent
+  &--white
+    background: #fff
+    color: $header-color

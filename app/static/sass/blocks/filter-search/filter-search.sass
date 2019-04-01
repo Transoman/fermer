@@ -1,0 +1,115 @@
+.filter-search
+  max-width: 770px
+  width: 100%
+  margin: 0 auto
+  &__row
+    display: flex
+    margin-bottom: 10px
+    +r(576)
+      flex-direction: column
+  &__category
+    position: relative
+    border-right: 1px solid $border-color
+    flex: 0 0 190px
+    width: 190px
+    +r(576)
+      flex: 0 0 auto
+      width: auto
+      border-right: 0
+      border-bottom: 1px solid $border-color
+    .filter-search
+      &__btn
+        border-radius: 5px 0 0 5px
+        +r(576)
+          border-radius: 5px 5px 0 0
+  &__radius
+    position: relative
+    border-right: 1px solid $border-color
+    flex: 0 0 130px
+    width: 130px
+    +r(576)
+      flex: 0 0 auto
+      width: auto
+      border-right: 0
+      border-bottom: 1px solid $border-color
+  &__btn
+    background: #fff
+    border: none
+    font-size: 14px
+    color: $gray
+    padding: 15px 20px
+    line-height: 1.4
+    white-space: nowrap
+    width: 100%
+    text-align: left
+    +trans
+    &::after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      width: 8px
+      height: 4px
+      margin-left: 10px
+      background: url(../images/general/icon-angle-down.svg) no-repeat center / contain
+    &:hover, &:focus
+      background-color: $hover-bg
+      outline: none
+  &__search
+    flex-grow: 1
+    input[type="text"]
+      border-radius: 0 5px 5px 0
+      border: 0
+      padding-top: 15px
+      padding-bottom: 15px
+      line-height: 1.4
+      +r(576)
+        border-radius: 0 0 5px 5px
+  &__btns
+    display: flex
+    justify-content: flex-end
+    +r(480)
+      flex-direction: column
+    & > *:not(:last-child)
+      margin-right: 10px
+      +r(576)
+        margin-right: 0
+        margin-bottom: 10px
+    &-icon
+      width: 14px
+      height: 16px
+      fill: $accent
+      +trans
+      margin-right: 10px
+    .btn--white
+      &:hover, &:focus
+        .filter-search
+          &__btns-icon
+            fill: #fff
+  &__list
+    display: none
+    position: absolute
+    left: 0
+    top: calc(100% + 10px)
+    background-color: #fff
+    border-radius: 5px
+    padding: 0
+    margin: 0
+    list-style: none
+    z-index: 1
+    &::before
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 5px 5px 5px
+      border-color: transparent transparent #fff transparent
+      position: absolute
+      top: -5px
+      right: 10px
+    a
+      display: block
+      padding: 10px 15px
+      font-size: 14px
+      color: $gray
+      &:hover
+        background-color: $hover-bg

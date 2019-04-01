@@ -1,0 +1,35 @@
+.hero
+  padding: 105px 0
+  z-index: 1
+  background:
+    repeat: no-repeat
+    position: center
+    size: cover
+  +r(767)
+    padding: 70px 0
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: rgba(#000, 0.5)
+    z-index: -1
+  &__content
+    margin-bottom: 50px
+    text-align: center
+    color: #fff
+    h1
+      margin-bottom: 10px
+      color: inherit
+    p
+      font-size: 20px
+      +r(992)
+        font-size: 18px
+      +r(767)
+        font-size: 16px
+        br
+          display: none
+      &:last-child
+        margin-bottom: 0
