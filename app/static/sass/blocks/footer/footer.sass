@@ -1,0 +1,86 @@
+.footer
+  padding: 70px 0 80px
+  background-color: #f7f7f7
+  +r(767)
+    padding: 50px 0
+  .container
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    +r(767)
+      text-align: center
+  &__col
+    padding-right: 20px
+    +r(992)
+      margin-bottom: 30px
+    +r(767)
+      padding: 0
+    &--1
+      width: 300px
+      +r(767)
+        width: 100%
+    &--2
+      width: 370px
+      +r(767)
+        width: 100%
+    &--3
+      width: 370px
+      padding-right: 0
+      +r(767)
+        width: 100%
+  &__logo
+    margin-bottom: 20px
+    +r(767)
+      justify-content: center
+  &__desc
+    font-size: 14px
+    font-weight: 300
+    padding-bottom: 20px
+    +r(767)
+      padding: 0
+  &__title
+    margin-bottom: 15px
+    font-size: 24px
+    font-weight: 400
+    color: $footer-title-color
+  &__menu
+    margin: 0
+    padding: 0
+    list-style: none
+    column-count: 2
+    +r(480)
+      column-count: 1
+    li
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+  &__phone
+    margin-bottom: 10px
+    +r(480)
+      text-align: center
+    .phone
+      &__tel
+        font-size: 16px
+      &__scheule
+        font-size: 14px
+  &__email
+    margin-bottom: 10px
+  &__social
+    +r(767)
+      justify-content: center
+    +r(576)
+      flex-direction: column
+      & > *:not(:last-child)
+        margin-right: 0
+
+.copyright
+  position: absolute
+  left: 15px
+  bottom: 0
+  margin: 0
+  +r(992)
+    position: static
+    width: 100%
+    margin-top: 20px
+    text-align: center

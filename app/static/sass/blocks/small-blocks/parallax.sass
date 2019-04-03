@@ -1,11 +1,21 @@
 .rellax
   position: absolute
   z-index: 0
+  +r(992)
+    display: none
 
 .parallax
+  &-1
+    bottom: 0
+    right: 87%
   &-2
     bottom: -300px
     right: 72%
   &-3
     left: 85%
     top: -200px
+  &-4
+    left: 85%
+    top: -800px
+    +r(1200)
+      top: -1000px

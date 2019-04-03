@@ -126,6 +126,16 @@ section
   &--white
     background: #fff
     color: $header-color
+  &--yellow
+    background-image: linear-gradient(to right, $selective-yellow, $candlelight)
+    box-shadow: 0 5px 15px rgba($selective-yellow, 0.5)
+    color: $header-color
+    &:hover
+      background-image: linear-gradient(to right, $selective-yellow, lighten($candlelight, 5%))
+      color: $header-color
+    &:focus
+      background-image: linear-gradient(to right, $selective-yellow, $selective-yellow)
+      color: $header-color
 
 .section-title
   margin-bottom: 40px

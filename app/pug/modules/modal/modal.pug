@@ -1,0 +1,133 @@
+#modal-region.modal.modal-region
+  button.modal__close.modal-region_close Close
+
+  .modal-region__head
+    h3.modal__title Выберите свой город
+    form(action="#").modal-region__form
+      .form-inline
+        .form-group
+          input(type="text", placeholder="Найдите свой город", required)
+        input(type="submit", value="Выбрать").btn.btn--yellow
+
+  .modal-region__body
+    ul.region-list
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Москва и МО").check__input
+          span.check__box
+          | Москва и МО
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Волгоград").check__input
+          span.check__box
+          | Волгоград
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Воронеж").check__input
+          span.check__box
+          | Воронеж
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Екатеринбург").check__input
+          span.check__box
+          | Екатеринбург
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Казань").check__input
+          span.check__box
+          | Казань
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Краснодар").check__input
+          span.check__box
+          | Краснодар
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Красноярск").check__input
+          span.check__box
+          | Красноярск
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Нижний Новгород").check__input
+          span.check__box
+          | Нижний Новгород
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Новосибирск").check__input
+          span.check__box
+          | Новосибирск
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Пермь").check__input
+          span.check__box
+          | Пермь
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Ростов-на-Дону").check__input
+          span.check__box
+          | Ростов-на-Дону
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Самара").check__input
+          span.check__box
+          | Самара
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Санкт-Петербург").check__input
+          span.check__box
+          | Санкт-Петербург
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Уфа").check__input
+          span.check__box
+          | Уфа
+      li.region-list__item
+        label.check
+          input(type="checkbox", name="region", value="Челябинск").check__input
+          span.check__box
+          | Челябинск
+
+#modal-register.modal.modal-register
+  button.modal__close.modal-register_close Close
+  h3.modal__title Регистрация профиля
+
+  form(action="#").modal-register__form
+    .form-row
+      label.form-label Кто Вы:
+      .form-group
+        label.check
+          input(type="checkbox", name="person", value="Фермер", checked).check__input
+          span.check__box
+          | Фермер
+        label.check
+          input(type="checkbox", name="person", value="Покупатель").check__input
+          span.check__box
+          | Покупатель
+    .form-row
+      label(for="company-name").form-label Название:
+      input(type="text", name="company_name", id="company-name", placeholder="Введите название компании или ФИО", required)
+    .form-row
+      label(for="phone").form-label Телефон:
+      input(type="tel", name="phone", id="phone", placeholder="Введите ваш телефон", required)
+    .form-row
+      label(for="email").form-label Mail:
+      input(type="email", name="email", id="email", placeholder="Введите вашу почту", required)
+    .form-row
+      label(for="password").form-label Пароль:
+      input(type="password", name="password", id="password", placeholder="Введите пароль", required)
+    .modal__btns
+      input(type="submit", value="Зарегистрироваться").btn
+
+#modal-login.modal.modal-login
+  button.modal__close.modal-login_close Close
+  h3.modal__title Войти в кабинет
+
+  form(action="#").modal-login__form
+    .form-row
+      label(for="email-login").form-label Mail:
+      input(type="email", name="email", id="email-login", placeholder="Введите вашу почту", required)
+    .form-row
+      label(for="password-login").form-label Пароль:
+      input(type="password", name="password", id="password-login", placeholder="Введите пароль", required)
+    .modal__btns
+      input(type="submit", value="Войти в кабинет").btn

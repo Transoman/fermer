@@ -11,7 +11,7 @@ header.header
             a(href="#") Контакты
 
       .small-location.header__small-location
-        a(href="#").small-location__link
+        a(href="#").small-location__link.modal-region_open
           +icon('location', 'small-location__icon')
           span.small-location__title Московская обл.
 
@@ -55,8 +55,8 @@ header.header
 
       .user-menu.header__user-menu
         .user-menu__btns
-          a(href="#").btn.btn--transp Вход
-          a(href="#").btn Регистрация
+          a(href="#").btn.btn--transp.modal-login_open Вход
+          a(href="#").btn.modal-register_open Регистрация
 
       button.nav-toggle
         span.nav-toggle__line

@@ -1,7 +1,32 @@
-.form-group
-  position: relative
+.form
+  &-inline
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    .btn
+      position: relative
+      margin-left: -5px
+  &-group
+    position: relative
+  &-row
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    +r(576)
+      flex-wrap: wrap
+  &-label
+    margin: 0
+    font-family: $ax-font
+    color: $header-color
+    cursor: pointer
+    +r(576)
+      margin-bottom: 5px
 
-input:not([type="submit"])
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea
   width: 100%
   padding: 12px 20px
   border-radius: 5px
@@ -17,3 +42,39 @@ input:not([type="submit"])
   &:focus
     border-color: $accent
     outline: none
+
+input[type="checkbox"]
+  @extend .visually-hidden
+
+.check
+  position: relative
+  margin: 0
+  padding-left: 25px
+  cursor: pointer
+  +trans
+  &:hover, &:focus
+    color: $accent
+  &__box
+    width: 14px
+    height: 14px
+    border: 1px solid $accent
+    border-radius: 50%
+    position: absolute
+    top: 6px
+    left: 0
+    &::after
+      content: ''
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      background-color: $accent
+      position: absolute
+      left: 3px
+      top: 3px
+      opacity: 0
+      visibility: hidden
+      +trans
+  &__input
+    &:checked ~ .check__box::after
+      opacity: 1
+      visibility: visible

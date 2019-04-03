@@ -1,0 +1,49 @@
+.banner
+  padding: 0
+  margin-bottom: 20px
+  background:
+    color: $accent
+    image: url(../images/general/banner-bg.png), linear-gradient(to right, $light-green, $accent)
+    repeat: no-repeat
+    position: center
+    size: cover
+  .container
+    position: relative
+    z-index: 1
+  &__wrap
+    overflow: hidden
+  &__img
+    position: absolute
+    left: -50px
+    top: 50%
+    transform: translateY(-50%)
+    +r(992)
+      left: -180px
+      width: 340px
+    +r(576)
+      display: none
+  &__cta
+    padding: 70px 0 80px 500px
+    +r(1200)
+      padding-left: 450px
+    +r(992)
+      padding-left: 180px
+    +r(767)
+      padding: 50px 0 50px 180px
+    +r(576)
+      padding: 50px 0
+      text-align: center
+    .section-title
+      margin-bottom: 30px
+      color: #fff
+    &-form
+      .form-group
+        display: flex
+        align-items: center
+        max-width: 610px
+        +r(767)
+          display: block
+      .btn
+        margin-left: -5px
+        +r(767)
+          margin: 10px 0 0
