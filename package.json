@@ -53,6 +53,7 @@
     "jquery-popup-overlay": "^2.1.0",
     "jquery-validation": "^1.19.0",
     "rellax": "^1.9.1",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "swiper": "^4.5.0"
   }
 }
