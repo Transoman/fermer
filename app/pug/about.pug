@@ -1,0 +1,13 @@
+extends template/main
+
+block variables
+  - var title = 'О нас'
+  - var pageClass = ''
+
+block content
+
+  include pages/about/hero
+  include pages/about/about
+  include pages/about/advantages
+  //- include pages/fermers/fermers-list
+  include modules/banner-form/banner-form

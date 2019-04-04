@@ -1,0 +1,47 @@
+.video
+  position: relative
+  width: 100%
+  height: 0
+  padding-bottom: 56.25%
+  background-color: $header-color
+  box-shadow: 0 15px 30px rgba($header-color, 0.15)
+  border-radius: 5px
+  overflow: hidden
+  &:hover
+    .video__link img
+      transform: scale(1.1)
+  &__link
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    & > img
+      +trans(transform, 2s)
+  &__media
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: none
+  &__button
+    position: absolute
+    top: 50%
+    left: 50%
+    z-index: 1
+    display: none
+    padding: 0
+    width: 80px
+    height: 80px
+    border: none
+    background-color: transparent
+    transform: translate(-50%, -50%)
+    cursor: pointer
+    &:focus
+      outline: none
+  // Enabled
+  &--enabled
+    cursor: pointer
+    .video__button
+      display: block

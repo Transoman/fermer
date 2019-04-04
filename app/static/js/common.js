@@ -82,6 +82,78 @@ jQuery(document).ready(function($) {
     }
   });
 
+  new Swiper('.about-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+  });
+
+  // Youtube Video Lazy Load
+  function findVideos() {
+    var videos = document.querySelectorAll('.video');
+
+    for (var i = 0; i < videos.length; i++) {
+      setupVideo(videos[i]);
+    }
+  }
+
+  function setupVideo(video) {
+    var link = video.querySelector('.video__link');
+    var button = video.querySelector('.video__button');
+    var id = parseMediaURL(link);
+
+    video.addEventListener('click', () => {
+      var iframe = createIframe(id);
+
+      link.remove();
+      button.remove();
+      video.appendChild(iframe);
+    });
+
+    var source = "https://img.youtube.com/vi/"+ id +"/maxresdefault.jpg";
+    var image = new Image();
+    image.src = source;
+    image.classList.add('video__media');
+
+    image.addEventListener('load', function() {
+      link.append( image );
+    } (video) );
+  
+    link.removeAttribute('href');
+    video.classList.add('video--enabled');
+  }
+
+  function parseMediaURL(media) {
+    var regexp = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/;
+    var url = media.href;
+    var match = url.match(regexp);
+
+    return match[5];
+  }
+
+  function createIframe(id) {
+    var iframe = document.createElement('iframe');
+
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay');
+    iframe.setAttribute('src', generateURL(id));
+    iframe.classList.add('video__media');
+
+    return iframe;
+  }
+
+  function generateURL(id) {
+    var query = '?rel=0&showinfo=0&autoplay=1';
+
+    return 'https://www.youtube.com/embed/' + id + query;
+  }
+
+  findVideos();
+
   // SVG
   svg4everybody({});
 
