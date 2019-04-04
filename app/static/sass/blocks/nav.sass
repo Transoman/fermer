@@ -16,7 +16,6 @@
   display: none
   position: absolute
   right: 15px
-  // top: 6px
   top: 50%
   transform: translateY(-50%)
   width: 28px
@@ -28,11 +27,9 @@
   background: none
   z-index: 101
   cursor: pointer
-  +trans
+  // +trans
   +r(992)
     display: block
-  +r(767)
-    // top: 2px
   &:hover
     .nav-toggle
       &__line
@@ -63,6 +60,10 @@
       top: 6px
       width: 70%
   &.is-active
+    position: fixed
+    top: 20px
+    right: 20px
+    transform: translateY(0)
     .nav-toggle
       &__line
         background: transparent

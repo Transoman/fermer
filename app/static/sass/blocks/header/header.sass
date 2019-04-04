@@ -48,3 +48,26 @@
       margin-right: 40px
     +r(567)
       margin-left: auto
+    .user-menu
+      &__btns
+        +r(480)
+          display: flex
+          flex-direction: column
+          align-items: flex-end
+        & > *:not(:last-child)
+          +r(480)
+            margin-right: 0
+    .btn
+      +r(767)
+        padding: 0
+        background: none
+        color: $accent
+        vertical-align: baseline
+        &:hover, &:focus
+          color: $light-green
+      &--transp
+        +r(767)
+          border: 0
+          color: $header-color
+          &:hover, &:focus
+            color: $accent

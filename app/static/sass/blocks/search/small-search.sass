@@ -1,5 +1,4 @@
 .small-search
-  // position: relative
   &__link
     &:hover
       .small-search
@@ -17,7 +16,9 @@
     left: 15px
     display: none
     background-color: #fff
-    z-index: 1
+    z-index: 102
+    +r(767)
+      top: -7px
     &.is-active
       display: block
       animation: showForm 0.5s ease
@@ -32,6 +33,8 @@
     width: 16px
     height: 16px
     border: 0
+    +r(992)
+      right: 0
     &:hover, &:focus
       outline: none
       &::before, &::after
@@ -52,9 +55,6 @@
     width: 100%
     .form-group
       width: 96%
-      // width: 1120px
-      // +r(1200)
-      //   width: 880px
     input[type="text"]
       padding: 8px 50px 8px 20px
     &-submit

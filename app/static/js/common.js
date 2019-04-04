@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
   $('.nav-toggle').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('is-active');
-    $('.header__nav').toggleClass('open');
+    $('.mobile-menu').toggleClass('open');
   });
 
   // Modal
@@ -28,17 +28,20 @@ jQuery(document).ready(function($) {
     e.preventDefault();
     $('.small-search__body').addClass('is-active');
     $('.small-search__form input[type="text"]').focus();
-    document.onkeydown = function(evt) {
-      evt = evt || window.event;
-        if (evt.keyCode == 27) {
-          $('.small-search__body').removeClass('is-active');
-        }
-      };
   });
 
   $('.small-search__close').click(function() {
     $('.small-search__body').removeClass('is-active');
   });
+
+  document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 27) {
+      $('.small-search__body').removeClass('is-active');
+      $('.nav-toggle').removeClass('is-active');
+    $('.mobile-menu').removeClass('open');
+    }
+  };
 
   // Parallax
   new Rellax('.rellax', {

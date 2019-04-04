@@ -1,0 +1,31 @@
+.mobile-menu
+  display: none
+  position: fixed
+  top: 0
+  right: 0
+  height: 100%
+  width: 290px
+  background-color: #fff
+  z-index: 100
+  padding: 40px 15px
+  box-shadow: 0 15px 30px rgba($header-color, 0.15)
+  +trans
+  +smooth-scroll
+  overflow-y: auto
+  transform: translateX(100%)
+  +r(992)
+    display: block
+  &.open
+    transform: translateX(0)
+  &__nav-list
+    display: block
+    margin-bottom: 20px
+  &__menu
+    display: block
+    margin-bottom: 20px
+  &__small-search
+    margin-bottom: 20px
+    .form-group
+      width: 100%
+  &__small-cart
+    margin-bottom: 20px
