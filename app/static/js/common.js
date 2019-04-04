@@ -92,6 +92,32 @@ jQuery(document).ready(function($) {
     },
   });
 
+  new Swiper('.users-slider', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerColumn: 2,
+    slidesPerColumnFill: 'row',
+    speed: 1000,
+    pagination: {
+      el: '.users-slider-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    autoplay: {
+      delay: 3000,
+    },
+    breakpoints: {
+      1499: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      767: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+    }
+  });
+
   // Youtube Video Lazy Load
   function findVideos() {
     var videos = document.querySelectorAll('.video');

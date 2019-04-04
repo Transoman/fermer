@@ -1,4 +1,6 @@
 .advantages-list
+  position: relative
+  z-index: 1
   &__item
     text-align: center
     margin-bottom: 30px
@@ -24,3 +26,7 @@
       z-index: -1
     img
       +trans
+  &__title
+    font-size: 20px
+    +r(576)
+      font-size: 18px
