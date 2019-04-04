@@ -1,0 +1,36 @@
+.delivery-price-table
+  margin-bottom: 30px
+  &__title
+    display: block
+    padding: 17px
+    text-align: center
+    font-family: $ax-font
+    font-size: 16px
+    color: #fff
+    background-color: $light-green
+    border-radius: 5px 5px 0 0
+  &__body
+    padding: 20px 25px
+    border: 1px solid $border-color
+    border-radius: 0 0 5px 5px
+    color: #666
+    +r(1200)
+      font-size: 14px
+      padding: 20px 15px
+  &__row
+    display: flex
+    align-items: center
+    margin-bottom: 15px
+    &:last-child
+      margin-bottom: 0
+    &--head
+      font-weight: 600
+      white-space: nowrap
+  &__col
+    width: 50%
+    padding-left: 25px
+    +r(1200)
+      padding-left: 15px
+    &:first-child
+      border-right: 1px solid $border-color
+      padding-left: 0
