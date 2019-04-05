@@ -1,0 +1,66 @@
+section.contact
+  .container
+    .page-head
+      h2 Адреса и телефоны
+      p Созданная в 2010 году, ферма уже сегодня кормит более тысячи московских семей продуктами собственного производства. Мы не стремимся к росту объёмов, наша цель — честный качественный продукт.
+
+    .row.justify-content-center
+      .icon-box.col-md-6.col-lg-4
+        .icon-box__icon
+          img(src="static/images/content/phone.svg", width="80" alt="")
+        h3.icon-box__title
+          a(href="tel:+79704586435") +7 (970) 458 64 35
+        p Вопросы по заказу продуктов <br>с 7 до 22 ежедневно
+      .icon-box.col-md-6.col-lg-4
+        .icon-box__icon
+          img(src="static/images/content/email.svg", width="80" alt="")
+        h3.icon-box__title
+          a(href="mailto:zakaz@globafarmer.ru") zakaz@globafarmer.ru
+        p По любым вопросам
+      .icon-box.col-md-6.col-lg-4
+        .icon-box__icon
+          img(src="static/images/content/clock.svg", width="80" alt="")
+        h3.icon-box__title c 7:00 до 22:00
+        p Время работы
+
+    .contact__form-wrap
+      .contact__form-inner
+        h2 Обратная связь
+        form(action="#")
+          .row
+            .col-md-6.form-group
+              input(type="text", name="name", placeholder="Введите Ваше имя", required)
+            .col-md-6.form-group
+              input(type="email", name="email", placeholder="Введите Ваше e-mail", required)
+          .form-group
+            textarea(name="message", placeholder="Введите Ваше сообщение", required)
+          .form-group.form-group--btn
+            input(type="submit", value="Отправить сообщение").btn
+
+  img.rellax.parallax-6(src="static/images/general/tomato-1.png", alt="", data-rellax-speed="2", data-rellax-percentage="1")
+  img.rellax.parallax-7(src="static/images/general/tomato-2.png", alt="")
+
+#map
+
+script.
+  function initMap() {
+    var uluru = {lat: 55.75657, lng: 37.6196042};
+    var icon = {
+      url: 'static/images/general/location.svg',
+      size: new google.maps.Size(76, 100),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(38, 100)
+    };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: uluru,
+      disableDefaultUI: true
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      icon: icon
+    });
+  }
+
+script(async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmnk4RCDwjSucIJ2WXRnLkuCrsWR4DUM4&callback=initMap")

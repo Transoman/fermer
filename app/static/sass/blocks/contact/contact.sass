@@ -1,0 +1,63 @@
+.contact
+  &__form
+    &-wrap
+      position: relative
+      z-index: 1
+      max-width: 830px
+      margin: 90px auto -300px
+      box-shadow: 0 15px 30px rgba($header-color, 0.15)
+      border-radius: 5px
+      +r(1200)
+        max-width: 700px
+        margin-bottom: -250px
+      +r(992)
+        margin-top: 50px
+      +r(767)
+        margin-bottom: 0
+      +r(576)
+        margin-top: 30px
+      &::before
+        content: ''
+        position: absolute
+        z-index: -2
+        left: -235px
+        bottom: -40px
+        width: 500px
+        height: 310px
+        background: url(../images/general/salat-left.png) no-repeat center / contain
+        +r(576)
+          display: none
+      &::after
+        content: ''
+        position: absolute
+        z-index: -2
+        right: -235px
+        bottom: -40px
+        width: 500px
+        height: 310px
+        background: url(../images/general/salat-right.png) no-repeat center / contain
+        +r(576)
+          display: none
+    &-inner
+      padding: 30px 60px 40px
+      text-align: center
+      background-color: #fff
+      border-radius: 5px
+      +r(576)
+        padding: 30px 15px
+      h2
+        margin-bottom: 25px
+      .row
+        margin: 0 -5px
+      [class^='col-']
+        padding: 0 5px
+      .form-group
+        margin-bottom: 10px
+
+#map
+  height: 750px
+  margin-bottom: 20px
+  +r(1200)
+    height: 500px
+  +r(767)
+    height: 300px
