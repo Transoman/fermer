@@ -1,0 +1,45 @@
+.faq-list
+  max-width: 830px
+  margin: 0 auto
+  &__item
+    border-bottom: 1px solid $border-color
+    padding: 0 0 30px 30px
+    margin-bottom: 30px
+    +r(576)
+      padding-left: 0
+    &:last-child
+      margin-bottom: 0
+    &.is-active
+      .faq-list
+        &__title
+          &::after
+            transform: rotate(-90deg)
+  &__title
+    position: relative
+    margin-bottom: 0
+    padding-right: 30px
+    cursor: pointer
+    font-size: 20px
+    +trans
+    +r(767)
+      font-size: 18px
+    +r(576)
+      font-size: 16px
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 23px
+      height: 23px
+      background: $accent url(../images/general/down-arrow.svg) no-repeat center / 9px 11px
+      border-radius: 50%
+      +trans
+    &:hover
+      color: $accent
+  &__content
+    display: none
+    margin-top: 15px
+    p
+      &:last-child
+        margin-bottom: 0

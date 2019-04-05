@@ -10,7 +10,10 @@ section.banner
             input(type="email", placeholder="Введите Вашу почту, что бы быть в курсе", required)
             input(type="submit", value="Подписаться").btn.btn--yellow
 
-  if parallax
-    img(src="static/images/general/avocado.png", alt="").rellax.parallax-4
-  else
-    img(src="static/images/general/tomato.png", alt="").rellax.parallax-4
+  case parallax
+    when 'avocado'
+      img(src="static/images/general/avocado.png", alt="", data-rellax-speed="1", data-rellax-percentage="0.5").rellax.parallax-4
+    when 'egg'
+      img(src="static/images/general/egg.png", alt="", data-rellax-speed="2", data-rellax-percentage="0.5").rellax.parallax-4
+    default
+      img(src="static/images/general/tomato.png", alt="", data-rellax-speed="1", data-rellax-percentage="0.5").rellax.parallax-4

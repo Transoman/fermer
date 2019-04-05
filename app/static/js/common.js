@@ -180,6 +180,34 @@ jQuery(document).ready(function($) {
 
   findVideos();
 
+  // Accordion
+  var accorderon = function() {
+    var container = $('.faq-list');
+    var toggle = container.find('.faq-list__title');
+    var content = container.find('.faq-list__content');
+    var speed = 500;
+
+    $('.faq-list__item.is-active').find('.faq-list__content').slideDown(speed);
+
+    toggle.click(function(e) {
+      e.preventDefault();
+
+      if ($(this).parent().hasClass('is-active')) {
+        $(this).parent().removeClass('is-active');
+        $(this).next().slideUp(speed);
+      }
+      else {
+        $(this).parent().addClass('is-active');
+        content.not($(this).next()).slideUp(speed);
+        toggle.not($(this)).parent().removeClass('is-active');
+        $(this).next().slideDown(speed);
+      }
+    });
+
+  }
+
+  accorderon();
+
   // SVG
   svg4everybody({});
 
