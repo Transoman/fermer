@@ -1,0 +1,38 @@
+.review-card
+  margin-bottom: 30px
+  &__inner
+    position: relative
+    z-index: 1
+    padding: 30px 30px 30px 20px
+    border: 1px solid $border-color
+    border-radius: 5px
+    background-color: #fff
+    +trans
+    &:hover
+      border-color: transparent
+      box-shadow: 0 15px 30px rgba($header-color, 0.15)
+    &::before
+      content: ''
+      position: absolute
+      bottom: 20px
+      right: 20px
+      width: 100px
+      height: 100px
+      background: url(../images/general/icon-field.svg) no-repeat center / contain
+      z-index: -1
+  &__top
+    display: flex
+    align-items: center
+    margin-bottom: 25px
+  &__head
+  &__pic
+    width: 70px
+    height: 70px
+    margin-right: 20px
+    border-radius: 5px
+    flex-shrink: 0
+  &__name
+    margin-bottom: 0
+  &__body
+    p:last-child
+      margin-bottom: 0

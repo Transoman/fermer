@@ -4,7 +4,8 @@ global.jQuery = require('jquery');
 var svg4everybody = require('svg4everybody'),
     popup = require('jquery-popup-overlay'),
     Rellax = require('rellax'),
-    Swiper = require('swiper');
+    Swiper = require('swiper'),
+    simplebar = require('simplebar');
 
 jQuery(document).ready(function($) {
 
@@ -83,6 +84,16 @@ jQuery(document).ready(function($) {
   });
 
   new Swiper('.about-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+  });
+
+  new Swiper('.general-slider', {
     slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
