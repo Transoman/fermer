@@ -10,4 +10,7 @@ section.banner
             input(type="email", placeholder="Введите Вашу почту, что бы быть в курсе", required)
             input(type="submit", value="Подписаться").btn.btn--yellow
 
-  img(src="static/images/general/tomato.png", alt="").rellax.parallax-4
+  if parallax
+    img(src="static/images/general/avocado.png", alt="").rellax.parallax-4
+  else
+    img(src="static/images/general/tomato.png", alt="").rellax.parallax-4
