@@ -1,0 +1,12 @@
+extends template/main
+
+block variables
+  - var title = 'Каталог продукции'
+  - var pageClass = ''
+  - var quickView = true
+
+block content
+
+  include pages/products/hero
+  include pages/products/product
+  include modules/banner-form/banner-form

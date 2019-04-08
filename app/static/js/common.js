@@ -5,8 +5,9 @@ var svg4everybody = require('svg4everybody'),
     popup = require('jquery-popup-overlay'),
     Rellax = require('rellax'),
     Swiper = require('swiper'),
-    simplebar = require('simplebar'),
-    pickmeup = require('pickmeup');
+    SimpleBar = require('simplebar'),
+    pickmeup = require('pickmeup'),
+    tabslet = require('tabslet');
 
 jQuery(document).ready(function($) {
 
@@ -20,8 +21,16 @@ jQuery(document).ready(function($) {
   // Modal
   $('.modal').popup({
     transition: 'all 0.3s',
+    scrolllock: true,
     onclose: function() {
       $(this).find('label.error').remove();
+    },
+    opentransitionend: function() {
+      updateSlider();
+      $('.general__info-text').each(function(i, el) {
+        var sb = new SimpleBar(el);
+        sb.recalculate()
+      });
     }
   });
 
@@ -91,26 +100,20 @@ jQuery(document).ready(function($) {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
-    },
-  });
-
-  new Swiper('.general-slider', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
+    }
   });
 
   new Swiper('.product-slider', {
     slidesPerView: 4,
     spaceBetween: 30,
+    speed: 1000,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
+    },
+    autoplay: {
+      delay: 3000,
     },
     breakpoints: {
       1200: {
@@ -153,6 +156,74 @@ jQuery(document).ready(function($) {
       },
     }
   });
+
+  $('.general-slider').each(function(i, el) {
+    var $this = $(this);
+    $this.addClass("general-slider-" + i);
+    $this.parent().find(".swiper-button-prev").addClass("button-prev-" + i);
+    $this.parent().find(".swiper-button-next").addClass("button-next-" + i);
+  
+    var btnNext = '.button-next-' + i;
+    var btnPrev = '.button-prev-' + i;
+
+    var generalSlider = 'generalSlider' + i;
+  
+    window[generalSlider] = new Swiper ('.general-slider-' + i, {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: btnNext,
+        prevEl: btnPrev,
+      },
+    });
+  });
+
+  $('.qview .review-slider').each(function(i, el) {
+    var $this = $(this);
+    $this.addClass("review-slider-" + i);
+    $this.parent().find(".swiper-button-prev").addClass("button-prev-" + i);
+    $this.parent().find(".swiper-button-next").addClass("button-next-" + i);
+  
+    var btnNext = '.button-next-' + i;
+    var btnPrev = '.button-prev-' + i;
+
+    var reviewSlider = 'reviewSlider' + i;
+  
+    window[reviewSlider] = new Swiper ('.review-slider-' + i, {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 1,
+          spaceBetween: 30
+        }
+      }
+    });
+  });
+
+  var updateSlider = function() {
+    $('.general-slider').each(function(i, el) {
+      var generalSlider = 'generalSlider' + i;
+      window[generalSlider].update();
+    });
+
+    $('.qview .review-slider').each(function(i, el) {
+      var reviewSlider = 'reviewSlider' + i;
+      window[reviewSlider].update();
+    });
+  };
+
+  updateSlider();
 
   // Youtube Video Lazy Load
   function findVideos() {
@@ -309,6 +380,33 @@ jQuery(document).ready(function($) {
   }
 
   changeProductQuantity();
+
+  $('.quantity__val').keydown(function (e) {
+    // Allow: backspace, delete, tab, escape, enter and .
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+         // Allow: Ctrl/cmd+A
+        (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+         // Allow: Ctrl/cmd+C
+        (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+         // Allow: Ctrl/cmd+X
+        (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+         // Allow: home, end, left, right
+        (e.keyCode >= 35 && e.keyCode <= 39)) {
+             // let it happen, don't do anything
+             return;
+    }
+    // Ensure that it is a number and stop the keypress
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+    }
+  });
+
+  // Tabs
+  $('.qview-tabs').tabslet();
+
+  $('.qview-tabs__list li').click(function() {
+    updateSlider();
+  });
 
   // SVG
   svg4everybody({});

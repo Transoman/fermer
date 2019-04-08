@@ -8,6 +8,11 @@
     +trans
     &:hover
       box-shadow: 0 5px 15px rgba($header-color, 0.15)
+      .product-card
+        &__qview
+          opacity: 1
+          visibility: visible
+          transform: translate(-50%, -50%) scale(1)
   &__img-wrap
     position: relative
     border-radius: 5px 5px 0 0
@@ -62,3 +67,17 @@
       height: 20px
       fill: $accent
       +trans
+  &__qview
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) scale(0)
+    padding: 14px 20px
+    border-radius: 5px
+    background-color: rgba(#fff, 0.85)
+    font-size: 14px
+    font-weight: 600
+    color: $header-color
+    white-space: nowrap
+    opacity: 0
+    visibility: hidden

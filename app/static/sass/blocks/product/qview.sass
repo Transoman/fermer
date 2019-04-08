@@ -1,0 +1,105 @@
+.qview
+  max-width: 830px
+  padding: 30px 30px 40px
+  background: #fff
+  font-size: 14px
+  +r(992)
+    max-width: 690px
+  +r(767)
+    max-width: 525px
+  .general
+    &__wrap
+      +r(992)
+        flex-wrap: wrap
+    &__left
+      +r(992)
+        flex: 0 0 100%
+        width: 100%
+        margin-bottom: 30px
+    &__right
+      padding-left: 50px
+      +r(992)
+        padding-left: 0
+        margin-bottom: 30px
+    &__title
+      font-size: 20px
+    &__right
+      .rating
+        &__star
+          width: 10px
+          height: 10px
+    &__action
+      margin-top: 25px
+      .price
+        &__number
+          font-size: 30px
+        &__currency
+          font-size: 14px
+        &__desc
+          font-size: 14px
+      &-row
+        +r(576)
+          flex-direction: column
+        .quantity
+          margin-right: 30px
+          +r(576)
+            margin-right: 0
+            margin-bottom: 20px
+    &__info
+      &-list
+        padding-top: 0
+      &-content
+        +r(992)
+          font-size: 14px
+      &-desc
+        padding: 30px 40px
+        +r(576)
+          padding: 15px
+
+.qview-tabs
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    border-bottom: 1px solid $border-color
+    li
+      +r(576)
+        width: 100%
+      &.active
+        a
+          background-color: $hover-bg
+          color: $general-color
+    a
+      display: block
+      padding: 15px 40px
+      border-radius: 5px 5px 0 0
+      color: $social-color
+      +r(576)
+        padding: 10px 20px
+  &__content
+    padding-top: 30px
+    .review-slider
+      +r(576)
+        margin:
+          right: -15px
+          left: -15px
+        padding:
+          right: 15px
+          left: 15px
+    .review-card
+      &__pic
+        +r(576)
+          width: 50px
+          height: 50px
+      .rating
+        +r(576)
+          flex-direction: column
+          align-items: flex-start
+          margin-top: 5px
+        &__caption
+          +r(576)
+            margin-left: 0
+  [id^="qview-review"]
+    padding-top: 0
