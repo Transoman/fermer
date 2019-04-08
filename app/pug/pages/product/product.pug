@@ -1,0 +1,89 @@
+section.general
+  .container
+    .general__wrap
+      .general__left
+        .general-slider.swiper-container
+          .swiper-wrapper
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/product-detail.jpg", alt="")
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/product-detail.jpg", alt="")
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/product-detail.jpg", alt="")
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/product-detail.jpg", alt="")
+          .swiper-pagination
+
+      .general__right
+        h1.general__title Сыр гауда из коровьего молока
+        span.general__manufacturer от ООО «МилкиВей»
+        .rating
+          .rating__group
+            span.rating__star.rating__star--fill
+            span.rating__star.rating__star--fill
+            span.rating__star.rating__star--fill
+            span.rating__star.rating__star--fill
+            span.rating__star
+          span.rating__caption 684 отзыва
+        .general__descr
+          p Полутвердый сыр 42 дневной выдержки от самого известного сыровара страны.
+        .general__action
+          .price
+            span.price__number 95
+              span.price__currency  руб.
+            span.price__desc  (за 1 литр)
+          .general__action-row
+            .quantity
+              button(type="button").quantity__btn.quantity__btn--plus +
+              input(type="number", name="quantity", id="quantity", value="1000", min="1", step="1", pattern="[0-9]*", inputmode="numeric").quantity__val
+              button(type="button").quantity__btn.quantity__btn--minus -
+
+            a(href="#").btn.add-cart В корзину
+              +icon('cart', 'add-cart__icon')
+
+    .row.mt60
+      .col-md-4.col-lg-3
+        .general__info-list
+          .general__info-item
+            span.general__info-label Могу продать:
+            p.general__info-content
+              +icon('pallet', 'general__info-icon')
+              | от 10 до 1 000 л.
+          .general__info-item
+            span.general__info-label Готов отгрузить:
+            p.general__info-content
+              +icon('calendar', 'general__info-icon')
+              | с 20.02 до 05.03.2019 г.
+          .general__info-item
+            span.general__info-label Способ доставки:
+            p.general__info-content
+              +icon('package', 'general__info-icon')
+              | Курьерская доставка <br>Самовывоз
+          .general__info-item
+            span.general__info-label Способ оплаты:
+            p.general__info-content
+              +icon('payment', 'general__info-icon')
+              | Наличный расчет <br>Безналичные расчет
+          .general__info-item
+            span.general__info-label Адрес производства:
+            p.general__info-content
+              +icon('point', 'general__info-icon')
+              | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+      .col-md-8.col-lg-9
+        .general__info-desc
+          h2.general__info-title Информация о продукте
+          .general__composition
+            span.general__composition-label Состав продукта:
+            .general__composition-body
+              +icon('info', 'general__composition-icon')
+              p Молоко коровье пастеризованное,  соль поваренная пищевая, закваска молочнокислых организмов, натуральный сычужный фермент
+          .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+            p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+            p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+            p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+            p В Конаковском районе Тверской области располагается цех по переработке молока, владеет и управляет которым семья Ильичевых. Валерий и Елена занимаются производством молочных продуктов с 2004 года. Они обучались и работали на базе Института молочной промышленности, здесь прошли первые пять лет их профессиональной деятельности. Затем  в городе Конаково Тверской области  семья отреставрировала трехэтажное здание, построенное еще в 1936 году, и установила там оборудование для переработки молока, так началось собственное производство.
+            p У них своя лаборатория, где контролируется весь технологический процесс, отличные технологи, которые на высоком уровне знают свою работу не только по части микробиологии, но и по части технологических секретов, и регулярно кто-нибудь из них отправляется на повышение квалификации.
+            p Валерий и Елена  принципиально не заводят своего фермерского хозяйства:  ни коровника, ни козлятника. И всё по одной простой причине, как отмечает Валерий, - профессионалы должны делать свое дело: профессионалы-животноводы должны дать качественное молоко, а профессионалы в переработке, семья Ильичевых, должны выдавать профессионально качественный продукт.
+
+  img.rellax.parallax-1(src="static/images/general/tomato.png", alt="")

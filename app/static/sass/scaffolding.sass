@@ -106,6 +106,7 @@ section
   cursor: pointer
   user-select: none
   transition: all .25s ease
+  box-shadow: 0 5px 15px rgba($accent, 0.5)
   &:hover
     background-image: linear-gradient(to right, $accent, lighten($light-green, 5%))
     color: #fff
@@ -123,11 +124,13 @@ section
     color: $accent
     padding-top: 14px
     padding-bottom: 14px
+    box-shadow: none
     &:hover, &:focus
       background: $accent
   &--white
     background: #fff
     color: $header-color
+    box-shadow: none
   &--yellow
     background-image: linear-gradient(to right, $selective-yellow, $candlelight)
     box-shadow: 0 5px 15px rgba($selective-yellow, 0.5)
@@ -202,3 +205,6 @@ section
 
 .pb0
   padding-bottom: 0
+
+.bg-color
+  background-color: $bg-color

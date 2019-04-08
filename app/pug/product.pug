@@ -1,0 +1,13 @@
+extends template/main
+
+block variables
+  - var title = 'Информация о товаре'
+  - var pageClass = ''
+  - var headerClass = 'header--inner'
+
+block content
+
+  include pages/product/product
+  include pages/product/product-review
+  include pages/product/product-slider
+  include modules/banner-form/banner-form

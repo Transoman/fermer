@@ -30,3 +30,51 @@
     display: block
     font-size: 12px
     color: $gray
+
+.add-cart
+  padding-right: 20px
+  padding-left: 20px
+  &__icon
+    width: 22px
+    height: 22px
+    margin-left: 20px
+    fill: #fff
+    +trans
+
+.quantity
+  display: flex
+  align-items: center
+  &__btn
+    width: 30px
+    height: 30px
+    padding: 0
+    background: #fff
+    border-radius: 5px
+    border: 1px solid $border-color
+    color: $gray
+    +trans
+    &:hover
+      border-color: $accent
+    &:focus
+      outline: none
+      border-color: $accent
+      background-color: $accent
+      color: #fff
+    &--minus
+      line-height: 25px
+  &__val
+    width: 60px
+    padding: 0 5px
+    border: none
+    box-shadow: none
+    appearance: none
+    -moz-appearance: textfield
+    font-size: 18px
+    color: $gray
+    text-align: center
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button
+      appearance: none
+      margin: 0
+    &:focus
+      outline: none

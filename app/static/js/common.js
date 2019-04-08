@@ -104,6 +104,30 @@ jQuery(document).ready(function($) {
     },
   });
 
+  new Swiper('.product-slider', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      767: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+    }
+  });
+
   new Swiper('.users-slider', {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -229,7 +253,7 @@ jQuery(document).ready(function($) {
       months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
       monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
     };
-  
+
     pickmeup('.small-filters__dates-body', {
       flat: true,
       mode: 'range',
@@ -237,7 +261,7 @@ jQuery(document).ready(function($) {
       hide_on_select: true,
       locale: 'ru'
     });
-  
+
     // Set default dates
     var nowDate = new Date;
     var datesArr = [];
@@ -247,16 +271,44 @@ jQuery(document).ready(function($) {
   
     var dates = pickmeup('.small-filters__dates-body').get_date(true)
     $('.small-filters__date').text(dates[0] + ' - ' + dates[1]);
-  
+
     $('.small-filters__btn-date').click(function(e) {
       e.preventDefault();
       $('.small-filters__dates-body').toggleClass('is-active');
     });
-  
+
     document.querySelector('.small-filters__dates-body').addEventListener('pickmeup-change', function (e) {
       $('.small-filters__date').text(e.detail.formatted_date[0] + ' - ' + e.detail.formatted_date[1]);
     });
   }
+
+  // Qty buton
+  function changeProductQuantity() {
+    $(document).on( 'click', '.quantity__btn', function(e) {
+        e.preventDefault();
+
+        var $button = $( this ),
+        $qty = $button.siblings( '.quantity__val' ),
+        current = parseInt( $qty.val() && $qty.val() > 0 ? $qty.val() : 0, 10 ),
+        min = parseInt( $qty.attr( 'min' ), 10 ),
+        max = parseInt( $qty.attr( 'max' ), 10 );
+
+        min = min ? min : 0;
+        max = max ? max : current + 1;
+
+        if ( $button.hasClass( 'quantity__btn--minus' ) && current > min ) {
+            $qty.val( current - 1 );
+            $qty.trigger( 'change' );
+        }
+
+        if ( $button.hasClass( 'quantity__btn--plus' ) && current < max ) {
+            $qty.val( current + 1 );
+            $qty.trigger( 'change' );
+        }
+    });
+  }
+
+  changeProductQuantity();
 
   // SVG
   svg4everybody({});
