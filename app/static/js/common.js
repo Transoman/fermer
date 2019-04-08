@@ -5,7 +5,8 @@ var svg4everybody = require('svg4everybody'),
     popup = require('jquery-popup-overlay'),
     Rellax = require('rellax'),
     Swiper = require('swiper'),
-    simplebar = require('simplebar');
+    simplebar = require('simplebar'),
+    pickmeup = require('pickmeup');
 
 jQuery(document).ready(function($) {
 
@@ -143,7 +144,7 @@ jQuery(document).ready(function($) {
     var button = video.querySelector('.video__button');
     var id = parseMediaURL(link);
 
-    video.addEventListener('click', () => {
+    video.addEventListener('click', function() {
       var iframe = createIframe(id);
 
       link.remove();
@@ -218,6 +219,44 @@ jQuery(document).ready(function($) {
   }
 
   accorderon();
+
+  // Datepicker
+  if ($('.small-filters__dates-body').length) {
+    pickmeup.defaults.locales['ru'] = {
+      days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+      daysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
+    };
+  
+    pickmeup('.small-filters__dates-body', {
+      flat: true,
+      mode: 'range',
+      format: 'd.m.Y',
+      hide_on_select: true,
+      locale: 'ru'
+    });
+  
+    // Set default dates
+    var nowDate = new Date;
+    var datesArr = [];
+    datesArr.push(new Date);
+    datesArr.push(new Date(nowDate.setDate(nowDate.getDate() + 7)));
+    pickmeup('.small-filters__dates-body').set_date(datesArr);
+  
+    var dates = pickmeup('.small-filters__dates-body').get_date(true)
+    $('.small-filters__date').text(dates[0] + ' - ' + dates[1]);
+  
+    $('.small-filters__btn-date').click(function(e) {
+      e.preventDefault();
+      $('.small-filters__dates-body').toggleClass('is-active');
+    });
+  
+    document.querySelector('.small-filters__dates-body').addEventListener('pickmeup-change', function (e) {
+      $('.small-filters__date').text(e.detail.formatted_date[0] + ' - ' + e.detail.formatted_date[1]);
+    });
+  }
 
   // SVG
   svg4everybody({});

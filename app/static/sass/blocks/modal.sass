@@ -153,3 +153,29 @@
     .form-label
       width: 115px
       flex-shrink: 0
+
+.modal-review
+  max-width: 620px
+  background: #fff
+  &__form
+    textarea
+      height: 200px
+    .form-row
+      justify-content: center
+    .form-label
+      font-size: 24px
+      margin-right: 20px
+      +r(576)
+        font-size: 20px
+    .form-group--btns
+      text-align: center
+      margin-top: 40px
+      .btn
+        max-width: 270px
+        width: 100%
+  .rating
+    &__group
+      flex-direction: row-reverse
+      & > *:not(:last-child)
+        margin-right: 0
+        margin-left: 5px

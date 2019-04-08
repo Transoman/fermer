@@ -131,3 +131,26 @@
       input(type="password", name="password", id="password-login", placeholder="Введите пароль", required)
     .modal__btns
       input(type="submit", value="Войти в кабинет").btn
+
+#modal-review.modal.modal-review
+  button.modal__close.modal-review_close Close
+  h3.modal__title Оставить отзыв о фемере
+  form(action="#").modal-review__form
+    .form-row
+      .form-label Оценка:
+      .rating
+        .rating__group
+          input(type="radio", id="rating5" name="rating", value="5").rating__star
+          label(for="rating5").rating__label
+          input(type="radio", id="rating4" name="rating", value="4").rating__star
+          label(for="rating4").rating__label
+          input(type="radio", id="rating3" name="rating", value="3").rating__star
+          label(for="rating3").rating__label
+          input(type="radio", id="rating2" name="rating", value="2").rating__star
+          label(for="rating2").rating__label
+          input(type="radio", id="rating1" name="rating", value="1").rating__star
+          label(for="rating1").rating__label
+    .form-group
+      textarea(name="review", placeholder="Введите текст отзыва", required)
+    .form-group.form-group--btns
+      input(type="submit", value="Оставить отзыв").btn

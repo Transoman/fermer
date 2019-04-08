@@ -52,6 +52,7 @@
     "jquery": "^3.3.1",
     "jquery-popup-overlay": "^2.1.0",
     "jquery-validation": "^1.19.0",
+    "pickmeup": "^3.2.1",
     "rellax": "^1.9.1",
     "simplebar": "^3.1.5",
     "svg4everybody": "^2.1.9",

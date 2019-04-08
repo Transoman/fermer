@@ -37,6 +37,16 @@
     &:hover, &:focus
       outline: none
       color: $accent
+      .small-filters
+        &__btn-icon
+          fill: $accent
+    &-icon
+      width: 18px
+      height: 16px
+      margin-right: 10px
+      fill: $gray
+      vertical-align: sub
+      +trans
   &__btns
     padding-left: 20px
     +r(576)
@@ -53,3 +63,36 @@
       margin-right: 10px
       &:hover, &:focus
         color: $light-green
+  &__dates
+    position: relative
+    padding-right: 20px
+    border-right: 1px solid $border-color
+    +r(576)
+      padding: 0
+      border: 0
+    .small-filters
+      &__btn
+        &::after
+          display: none
+    &-body
+      position: absolute
+      top: calc(100% + 10px)
+      left: 0
+      z-index: 1
+      display: none
+      &::before
+        content: ''
+        position: absolute
+        left: 10px
+        top: -5px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 5px 5px 5px
+        border-color: transparent transparent #ffffff transparent
+        z-index: 1
+      &.is-active
+        display: block
+      .pickmeup
+        font-size: 15px
+        box-shadow: 0 5px 15px rgba($header-color, 0.15)

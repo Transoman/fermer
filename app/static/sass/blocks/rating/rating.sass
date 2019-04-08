@@ -21,6 +21,19 @@
     background-color: $rating-bg
     &--fill
       background-color: $rating-fill-bg
+  input.rating__star
+    @extend .visually-hidden
+    &:checked ~ label
+      background-color: $rating-fill-bg
+  &__label
+    width: 24px
+    height: 24px
+    background-color: $rating-bg
+    border-radius: 50%
+    cursor: pointer
+    +trans
+    &:hover, &:hover ~ label
+      background-color: $rating-fill-bg
   &__caption
     margin-left: 10px
     color: $gray

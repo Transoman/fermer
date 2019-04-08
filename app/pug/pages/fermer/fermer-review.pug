@@ -1,6 +1,12 @@
 section.s-review.s-review--bg
   .container
-    h2.section-title.text-center Отзывы о фермере и его продукции
+    .section-head
+      h2.section-title Отзывы о фермере и его продукции
+      .section-head__right
+        .small-filters
+          a(href="#").small-filters__link.modal-review_open
+            +icon('writing', 'small-filters__link-icon')
+            span Оставить отзыв
     .row
       .col-md-6.col-lg-4.review-card
         .review-card__inner
