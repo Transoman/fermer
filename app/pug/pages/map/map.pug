@@ -1,0 +1,184 @@
+section.map
+  .map__wrap
+    #filter-map
+    a(href="#").btn.map__drow-btn
+      +icon('drow', 'map__drow-btn-icon')
+      | Нарисовать область
+
+  .map__filters
+    form(action="#" method="get").filter-search
+      .filter-search__row
+        .filter-search__category
+          .filter-search__category-head
+            button(type="button").filter-search__btn
+              span Категория товаров
+            ul.dropdown-list
+              li
+                a(href="#") Молочные продукты
+              li
+                a(href="#") Мясо и мясные изделия
+              li
+                a(href="#") Птица и яйца
+              li
+                a(href="#") Рыба и морепродукты
+              li
+                a(href="#") Зелень, овощи, фрукты, ягоды
+              li
+                a(href="#") Домашние сладости
+              li
+                a(href="#") Домашние заготовки
+              li
+                a(href="#") Готовая еда
+              li
+                a(href="#") Почти готовая еда
+              li
+                a(href="#") Бакалея
+
+        .filter-search__radius
+          .filter-search__radius-head
+            button(type="button").filter-search__btn
+              span Радиус, км
+          .filter-search__radius-body
+
+        .filter-search__search
+          input(type="text" name="product" placeholder="Введите названия...")
+
+      .filter-search__btns
+        a(href="#").btn.btn--white.filter-search__toggle-filters
+          +icon('filter', 'filter-search__btns-icon')
+          span Фильтры
+
+  .map-advert
+    .map-advert__top
+      span.map-advert__count 384 объявления
+      a(href="#").map-advert__hidden-img Скрыть фото
+
+    .map-advert__list
+      .map-advert__item
+        .map-advert__img-wrap
+          img(src="static/images/content/fermer-card-1.jpg", alt="ООО «МилкиВей»")
+        .map-advert__body
+          h3.map-advert__title
+            a(href="#") ООО «МилкиВей»
+          .rating
+            .rating__group
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star
+            span.rating__caption 684 отзыва
+          ul
+            li Сыры твердые
+            li Молоко
+            li Молочные коктейли
+            li Сливочное масло
+            li Творожные десерты
+            li Еще +10
+          .map-advert__services
+            +icon('delivery', 'map-advert__services-icon')
+            +icon('package-2', 'map-advert__services-icon')
+            +icon('cash', 'map-advert__services-icon')
+            +icon('card', 'map-advert__services-icon')
+      .map-advert__item
+        .map-advert__img-wrap
+          img(src="static/images/content/fermer-card-2.jpg", alt="ООО «Михайловское»")
+        .map-advert__body
+          h3.map-advert__title
+            a(href="#") ООО «Михайловское»
+          .rating
+            .rating__group
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star
+            span.rating__caption 684 отзыва
+          ul
+            li Сыры твердые
+            li Молоко
+            li Молочные коктейли
+            li Сливочное масло
+            li Творожные десерты
+            li Еще +10
+          .map-advert__services
+            +icon('delivery', 'map-advert__services-icon')
+            +icon('package-2', 'map-advert__services-icon')
+            +icon('cash', 'map-advert__services-icon')
+            +icon('card', 'map-advert__services-icon')
+      .map-advert__item
+        .map-advert__img-wrap
+          img(src="static/images/content/fermer-card-3.jpg", alt="ООО «Михайловское»")
+        .map-advert__body
+          h3.map-advert__title
+            a(href="#") ООО «Михайловское»
+          .rating
+            .rating__group
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star.rating__star--fill
+              span.rating__star
+            span.rating__caption 684 отзыва
+          ul
+            li Сыры твердые
+            li Молоко
+            li Молочные коктейли
+            li Сливочное масло
+            li Творожные десерты
+            li Еще +10
+          .map-advert__services
+            +icon('delivery', 'map-advert__services-icon')
+            +icon('package-2', 'map-advert__services-icon')
+            +icon('cash', 'map-advert__services-icon')
+            +icon('card', 'map-advert__services-icon')
+
+
+script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+script.
+    ymaps.ready(init);
+
+    var myMap, myPlacemark;
+
+    function init() {
+      myMap = new ymaps.Map('filter-map', {
+        center: [55.76499601, 37.36425042],
+        zoom: 10
+      });
+
+      myPlacemark = new ymaps.Placemark([55.76499601, 37.36425042], {
+        hintContent: 'ООО «МилкиВей»',
+        balloonContent:
+          '<div class="map__balloon">' +
+            '<h3>ООО «МилкиВей»</h3>' +
+            '<div class="rating">' +
+              '<div class="rating__group">' +
+              '<span class="rating__star rating__star--fill"></span>' +
+              '<span class="rating__star rating__star--fill"></span>' +
+              '<span class="rating__star rating__star--fill"></span>' +
+              '<span class="rating__star rating__star--fill"></span>' +
+              '<span class="rating__star"></span>' +
+              '</div>' +
+              '<span class="rating__caption">684 отзыва</span>' +
+            '</div>' +
+            '<ul>' +
+              '<li>Сыры твердые</li>' +
+              '<li>Молоко</li>' +
+              '<li>Молочные коктейли</li>' +
+              '<li>Сливочное масло</li>' +
+              '<li>Творожные десерты</li>' +
+              '<li>Еще +10</li>' +
+            '</ul>' +
+            '<p class="map__balloon-location"><svg><use xlink:href="static/images/svg/symbol/sprite.svg#location"></use></svg>Московская область, Орехово-Зуево,  улица Гагарина, 26</p>' +
+          '</div>'
+      },
+      {
+        iconLayout: 'default#imageWithContent',
+        iconImageHref: 'static/images/general/location-2.svg',
+        iconImageSize: [45, 60],
+        iconImageOffset: [-24.5, -60],
+        });
+
+      myMap.geoObjects.add(myPlacemark);
+
+    }

@@ -1,0 +1,92 @@
+@import 'map-advert'
+
+.map
+  padding: 0
+  height: calc(100vh - 102px)
+  +r(992)
+    height: auto
+  #filter-map
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    +r(992)
+      position: static
+      height: 500px
+  &__wrap
+    position: relative
+    height: 100%
+  &__filters
+    position: absolute
+    top: 40px
+    left: 40px
+    right: 40px
+    z-index: 1
+    max-width: 700px
+    +r(1200)
+      max-width: 570px
+  &__drow
+    &-btn
+      position: absolute
+      bottom: 100px
+      left: 50%
+      transform: translateX(-50%)
+      z-index: 1
+      white-space: nowrap
+      +r(992)
+        bottom: 40px
+      &-icon
+        width: 28px
+        height: 16px
+        margin-right: 10px
+        fill: #fff
+  &__balloon
+    position: relative
+    padding: 10px 0 0 10px
+    font-family: $main-font
+    max-width: 275px
+    &::before
+      content: ''
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 100px
+      height: 100px
+      background: url(../images/general/icon-field.svg) no-repeat center / contain
+      z-index: -1
+    h3
+      font-size: 16px
+    .rating
+      margin-bottom: 20px
+    ul
+      margin: 0 0 20px
+      padding: 0
+      list-style: none
+      li
+        position: relative
+        padding-left: 10px
+        padding-right: 5px
+        display: inline
+        &::before
+          content: ''
+          position: absolute
+          top: 8px
+          left: 0
+          width: 4px
+          height: 4px
+          border-radius: 50%
+          background-color: $accent
+        &:last-child
+          color: $accent
+    &-location
+      position: relative
+      padding-left: 20px
+      svg
+        position: absolute
+        top: 2px
+        left: 0
+        width: 14px
+        height: 16px
+        fill: $accent
+        margin-right: 10px

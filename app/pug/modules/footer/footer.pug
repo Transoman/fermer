@@ -1,49 +1,50 @@
-footer.footer
-  .container
-    .footer__col.footer__col--1
-      .logo.footer__logo
-        a(href="./").logo__link
-          img(src="static/images/general/logo.svg", width="180", alt="ГлобаФермер")
-      .footer__desc
-        p Политика в отношении обработки персональных данных
+if !hideFooter
+  footer.footer
+    .container
+      .footer__col.footer__col--1
+        .logo.footer__logo
+          a(href="./").logo__link
+            img(src="static/images/general/logo.svg", width="180", alt="ГлобаФермер")
+        .footer__desc
+          p Политика в отношении обработки персональных данных
 
-    .footer__col.footer__col--2
-      h3.footer__title Меню
-      ul.footer__menu
-        li
-          a(href="#") Каталог продукции
-        li
-          a(href="#") Фермеры
-        li
-          a(href="#") Презентация
-        li
-          a(href="#") Вопросы и ответы
-        li
-          a(href="#") Контакты
+      .footer__col.footer__col--2
+        h3.footer__title Меню
+        ul.footer__menu
+          li
+            a(href="#") Каталог продукции
+          li
+            a(href="#") Фермеры
+          li
+            a(href="#") Презентация
+          li
+            a(href="#") Вопросы и ответы
+          li
+            a(href="#") Контакты
 
-    .footer__col.footer__col--3
-      h3.footer__title Контакты
-      .phone.footer__phone
-        +icon('phone', 'phone__icon')
-        a(href="tel:+79704586435").phone__tel +7 (970) 458 64 35 
-        span.phone__schedule (с 7 до 22 ежедневно)
-      .footer__email
-        +icon('envelope', 'phone__icon')
-        a(href="mailto:globa.farm@gmail.com") globa.farm@gmail.com
-      ul.social.footer__social
-        li.social__item
-          a(href="https://instagram.com", target="_blank")
-            +icon('instagram', 'social__icon')
-            span Instagram
-        li.social__item
-          a(href="https://facebook.com", target="_blank")
-            +icon('facebook', 'social__icon')
-            span Facebook
-        li.social__item
-          a(href="https://vk.com", target="_blank")
-            +icon('vk', 'social__icon')
-            span ВКонтакте
+      .footer__col.footer__col--3
+        h3.footer__title Контакты
+        .phone.footer__phone
+          +icon('phone', 'phone__icon')
+          a(href="tel:+79704586435").phone__tel +7 (970) 458 64 35 
+          span.phone__schedule (с 7 до 22 ежедневно)
+        .footer__email
+          +icon('envelope', 'phone__icon')
+          a(href="mailto:globa.farm@gmail.com") globa.farm@gmail.com
+        ul.social.footer__social
+          li.social__item
+            a(href="https://instagram.com", target="_blank")
+              +icon('instagram', 'social__icon')
+              span Instagram
+          li.social__item
+            a(href="https://facebook.com", target="_blank")
+              +icon('facebook', 'social__icon')
+              span Facebook
+          li.social__item
+            a(href="https://vk.com", target="_blank")
+              +icon('vk', 'social__icon')
+              span ВКонтакте
 
-    p.copyright &copy; ГлобаФермер 2019 год
+      p.copyright &copy; ГлобаФермер 2019 год
 
 include ../modal/modal

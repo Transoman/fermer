@@ -1,0 +1,107 @@
+.map-advert
+  position: absolute
+  top: 0
+  right: 0
+  width: 370px
+  height: 100%
+  padding: 20px 15px 40px
+  background-color: $bg-color
+  z-index: 1
+  overflow-y: auto
+  +smooth-scroll
+  +r(992)
+    position: static
+    width: 100%
+  &__top
+    margin-bottom: 15px
+    font-size: 14px
+  &__count
+    color: $gray
+  &__hidden-img
+    float: right
+    color: $accent
+    &:hover, &:focus
+      color: $hover-color
+  &__list
+    +r(992)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+  &__item
+    margin-bottom: 20px
+    border-radius: 5px
+    background-color: #fff
+    +trans
+    +r(992)
+      width: 48%
+    +r(576)
+      width: 100%
+    &:last-child
+      margin-bottom: 0
+    &:hover
+      background-color: $hover-bg
+    &.is-active
+      .map-advert
+        &__body
+          border-top: 1px solid $border-color
+          border-radius: 5px
+  &__img-wrap
+    border-radius: 5px 5px 0 0
+    overflow: hidden
+    img
+      display: block
+      width: 100%
+  &__title
+    margin-bottom: 0
+    font-size: 16px
+    a
+      color: $header-color
+      &:hover, &:focus
+        color: $accent
+  &__body
+    position: relative
+    z-index: 1
+    padding: 15px 20px
+    font-size: 14px
+    border: 1px solid $border-color
+    border-top: 0
+    +trans
+    border-radius: 0 0 5px 5px
+    &::before
+      content: ''
+      position: absolute
+      right: 10px
+      bottom: 10px
+      width: 100px
+      height: 100px
+      background: url(../images/general/icon-field.svg) no-repeat center / contain
+      z-index: -1
+    ul
+      margin: 0 0 20px
+      padding: 0
+      list-style: none
+      li
+        position: relative
+        padding-left: 10px
+        display: inline
+        &::before
+          content: ''
+          position: absolute
+          top: 8px
+          left: 0
+          width: 4px
+          height: 4px
+          border-radius: 50%
+          background-color: $accent
+        &:last-child
+          color: $accent
+    .rating
+      margin-bottom: 20px
+  &__services
+    & > *:not(:last-child)
+      margin-right: 15px
+    &-icon
+      width: 25px
+      height: 25px
+      fill: $footer-title-color
+      vertical-align: baseline

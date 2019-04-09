@@ -412,6 +412,41 @@ jQuery(document).ready(function($) {
     updateSlider();
   });
 
+  // Filter toggle list
+  $('.filter-search__btn').click(function(e) {
+    e.preventDefault();
+    $(this).toggleClass('is-active');
+    $(this).next().toggleClass('is-active');
+  });
+
+  $('.filter-search__toggle-filters').click(function(e) {
+    e.preventDefault();
+    $('.filter-search').toggleClass('is-active');
+    $('.filter-search').find('.dropdown-list').removeClass('is-active');
+  });
+
+  $('.dropdown-list a').click(function(e) {
+    e.preventDefault();
+    $('.dropdown-list li').removeClass('is-active')
+    var val = $(this).text();
+    $(this).parent().addClass('is-active');
+    $(this).parents('ul').prev().find('span').text(val);
+  });
+
+  $('.map-advert__hidden-img').click(function(e) {
+    e.preventDefault();
+    var hideText = 'Скрыть фото';
+    var showText = 'Показать фото';
+    $('.map-advert__item').toggleClass('is-active');
+    $('.map-advert__img-wrap').slideToggle();
+    if ($('.map-advert__item').hasClass('is-active')) {
+      $(this).text(showText);
+    }
+    else {
+      $(this).text(hideText);
+    }
+  });
+
   // SVG
   svg4everybody({});
 
