@@ -54,7 +54,7 @@
     "jquery-validation": "^1.19.0",
     "pickmeup": "^3.2.1",
     "rellax": "^1.9.1",
-    "simplebar": "^3.1.5",
+    "simplebar": "3.1.4",
     "svg4everybody": "^2.1.9",
     "swiper": "^4.5.0",
     "tabslet": "^1.7.3"

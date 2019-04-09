@@ -14,3 +14,19 @@
       width: 18px
       border-radius: 10px
       background-color: $rating-fill-bg
+
+.swiper-button-prev,
+.swiper-button-next
+  width: 11px
+  height: 20px
+  margin-top: -5px
+  opacity: 0.75
+  +trans
+  &:hover, &:focus
+    opacity: 1
+
+.swiper-button-prev
+  background: url(../images/general/icon-left-arrow.svg) no-repeat center / contain
+
+.swiper-button-next
+  background: url(../images/general/icon-right-arrow.svg) no-repeat center / contain

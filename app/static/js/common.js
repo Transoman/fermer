@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
       updateSlider();
       $('.general__info-text').each(function(i, el) {
         var sb = new SimpleBar(el);
-        sb.recalculate()
+        sb.recalculate();
       });
     }
   });
@@ -68,10 +68,14 @@ jQuery(document).ready(function($) {
   new Swiper('.s-review .review-slider', {
     slidesPerView: 3,
     spaceBetween: 30,
+    speed: 1000,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
+    },
+    autoplay: {
+      delay: 3000,
     },
     breakpoints: {
       1740: {
