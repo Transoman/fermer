@@ -1,0 +1,47 @@
+.profile-info
+  margin-bottom: 50px
+  +r(576)
+    margin-bottom: 30px
+  &__title
+    display: block
+    margin-bottom: 10px
+    font-size: 14px
+    color: $social-color
+  &__content
+    position: relative
+    padding-left: 35px
+    font-size: 14px
+    color: $general-color
+    p, a
+      margin-bottom: 15px
+      color: $header-color
+      font-size: 16px
+    a
+      display: inline-block
+      &:hover, &:focus
+        color: $accent
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        position: relative
+        padding-left: 10px
+        &::before
+          content: ''
+          position: absolute
+          top: 10px
+          left: 0
+          width: 4px
+          height: 4px
+          border-radius: 50%
+          background-color: $accent
+  &__icon
+    position: absolute
+    top: 0
+    left: 0
+    width: 24px
+    height: 24px
+    fill: $accent
+  &__desc
+    display: block

@@ -1,0 +1,46 @@
+@import 'profile-hero'
+@import 'profile-info'
+
+.profile
+  padding: 130px 0 120px
+  +r(1200)
+    padding: 90px 0 100px
+  +r(767)
+    padding: 70px 0
+  &__row
+    display: flex
+    +r(767)
+      display: block
+    &-left
+      width: 51.28%
+      flex-shrink: 0
+      margin-right: 40px
+      +r(1200)
+        margin-right: 30px
+      +r(767)
+        width: 100%
+        margin: 0 0 30px
+    &-right
+      width: 45.29%
+      +r(767)
+        width: 100%
+  &__info
+    padding: 45px 20px 45px 50px
+    height: 100%
+    background-color: $bg-color
+    +r(1200)
+      padding-left: 30px
+    +r(767)
+      padding: 30px 20px
+    &-title
+      margin-bottom: 30px
+      font-size: 24px
+      +r(576)
+        font-size: 22px
+        text-align: center
+    &-text
+      max-height: 265px
+      color: $general-color
+      padding-right: 30px
+      +r(576)
+        padding-right: 20px

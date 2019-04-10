@@ -1,0 +1,129 @@
+.profile-hero
+  padding: 150px 0 10px
+  background:
+    repeat: no-repeat
+    position: center
+    size: cover
+  z-index: 1
+  +r(1200)
+    padding-top: 100px
+  +r(767)
+    padding: 70px 0 10px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    background-color: rgba(#000, 0.5)
+    z-index: -1
+  &__pic
+    position: absolute
+    top: 0
+    left: 0
+    width: 300px
+    border-radius: 5px
+    border: 2px solid #fff
+    box-shadow: 0 15px 30px rgba($header-color, 0.15)
+    +r(1200)
+      width: 250px
+    +r(992)
+      position: static
+      flex-shrink: 0
+      margin-right: 30px
+    +r(767)
+      width: 150px
+    +r(576)
+      margin: 0 auto 30px
+    img
+      width: 100%
+  &__wrap
+    position: relative
+    padding-left: 370px
+    +r(1200)
+      padding-left: 280px
+    +r(992)
+      display: flex
+      align-items: flex-start
+      padding-left: 0
+      margin-bottom: 30px
+    +r(576)
+      flex-direction: column
+      align-items: center
+      text-align: center
+    p
+      &:last-of-type
+        margin-bottom: 45px
+        +r(992)
+          margin-bottom: 0
+  &__content
+    font-size: 18px
+    color: #fff
+    +r(767)
+      font-size: 16px
+  &__title
+    margin-bottom: 10px
+    font-size: 36px
+    color: inherit
+    +r(992)
+      font-size: 32px
+    +r(576)
+      font-size: 24px
+  &__btns
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-start
+    padding-left: 370px
+    +r(1200)
+      padding-left: 280px
+    +r(992)
+      padding-left: 0
+    &-list
+      margin: 0 10px 10px 0
+      padding: 0
+      list-style: none
+      display: flex
+      align-items: center
+      +r(767)
+        flex-direction: column
+        align-items: stretch
+        width: 100%
+        margin:
+          right: 0
+        text-align: center
+      li
+        border-right: 1px solid $border-color
+        overflow: hidden
+        +r(767)
+          border-right: 0
+          border-bottom: 1px solid $border-color
+        &:first-child
+          border-radius: 5px 0 0 5px
+          +r(767)
+            border-radius: 5px 5px 0 0
+        &:last-child
+          border: 0
+          border-radius: 0 5px 5px 0
+          +r(767)
+            border-radius: 0 0 5px 5px
+        &.is-active
+          a
+            color: $accent
+      a
+        display: block
+        padding: 13px 30px
+        background-color: #fff
+        font-size: 14px
+        font-weight: 600
+        color: $gray
+        +r(992)
+          padding:
+            right: 20px
+            left: 20px
+        &:hover, &:focus
+          color: $accent
+    .btn
+      margin-bottom: 10px
+      +r(576)
+        width: 100%

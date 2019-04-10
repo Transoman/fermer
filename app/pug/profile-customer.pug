@@ -1,0 +1,12 @@
+extends template/main
+
+block variables
+  - var title = 'Кабинет покупателя'
+  - var pageClass = ''
+
+block content
+
+  include pages/cabinet/profile-customer/profile-hero
+  include pages/cabinet/profile-customer/profile-customer
+  //- include pages/products/product
+  include modules/banner-form/banner-form
