@@ -101,6 +101,14 @@
         z-index: 1
       &.is-active
         display: block
-      .pickmeup
-        font-size: 15px
-        box-shadow: 0 5px 15px rgba($header-color, 0.15)
+  &__search
+    padding-left: 20px
+    +r(576)
+      padding-left: 0
+    input
+      border: 0
+      padding: 0
+    .small-filters
+      &__btn
+        &::after
+          display: none

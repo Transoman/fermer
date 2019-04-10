@@ -320,14 +320,15 @@ jQuery(document).ready(function($) {
   accorderon();
 
   // Datepicker
+  pickmeup.defaults.locales['ru'] = {
+    days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+    daysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
+  };
+
   if ($('.small-filters__dates-body').length) {
-    pickmeup.defaults.locales['ru'] = {
-      days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-      daysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
-    };
 
     pickmeup('.small-filters__dates-body', {
       flat: true,
@@ -356,6 +357,12 @@ jQuery(document).ready(function($) {
       $('.small-filters__date').text(e.detail.formatted_date[0] + ' - ' + e.detail.formatted_date[1]);
     });
   }
+
+  pickmeup('#product-date', {
+    format: 'd.m.Y',
+    hide_on_select: true,
+    locale: 'ru'
+  });
 
   // Qty buton
   function changeProductQuantity() {
@@ -445,6 +452,30 @@ jQuery(document).ready(function($) {
     else {
       $(this).text(hideText);
     }
+  });
+
+  // Table search
+  function tableSearch() {
+    var phrase = document.querySelector('.small-filters__search input');
+    var table = document.querySelector('.profile-history');
+    var regPhrase = new RegExp(phrase.value, 'i');
+    var flag = false;
+    for (var i = 1; i < table.rows.length; i++) {
+        flag = false;
+        for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+            flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
+            if (flag) break;
+        }
+        if (flag) {
+            table.rows[i].style.display = "";
+        } else {
+            table.rows[i].style.display = "none";
+        }
+    }
+  }
+
+  $('.small-filters__search input').keyup(function() {
+    tableSearch();
   });
 
   // SVG

@@ -75,6 +75,58 @@ section
   +r(767)
     padding: 50px 0
 
+table
+  width: 100%
+  font-size: 14px
+  color: $general-color
+  thead
+    border-bottom: 1px solid $border-color
+    +r(992)
+      display: none
+  th, td
+    position: relative
+    padding: 10px 20px
+    font-weight: 400
+  tbody
+    font-family: $ax-font
+    tr
+      
+      &:nth-child(even)
+        background-color: $bg-color
+        td
+          padding:
+            top: 14px
+            bottom: 14px
+    td
+      padding:
+        top: 22px
+        bottom: 22px
+      +r(992)
+        padding: 14px 20px 14px 140px
+        display: block
+      &:nth-child(2)
+        width: 31.62%
+        +r(992)
+          width: 100%
+      &:last-child
+        width: 33.33%
+        +r(992)
+          width: 100%
+      +r(992)
+        &::before
+          content: attr(data-label)
+          position: absolute
+          left: 20px
+          font-family: $main-font
+  tfoot
+    font-family: $ax-font
+    font-size: 16px
+    font-weight: 600
+    color: $header-color
+    border-top: 1px solid $border-color
+    td
+      padding-top: 25px
+
 /* Hidden element */
 .visually-hidden
   position: absolute
