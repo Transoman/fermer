@@ -1,0 +1,90 @@
+section.profile.profile--order
+  .container
+    h2.section-title Оформление заказа
+
+    .row.profile-order
+      .col-lg-7
+        form(action="#").profile-order__form
+          fieldset.form-fieldset
+            legend Контактные данные получателя:
+            .form-row
+              label(for="order-name").form-label Имя:
+              input(type="text", name="name", id="order-name", placeholder="Введите имя", required)
+            .form-row
+              label(for="order-lastname").form-label Фамилия:
+              input(type="text", name="lastname", id="order-lastname", placeholder="Введите фамилия", required)
+            .form-row
+              label(for="order-phone").form-label Телефон:
+              input(type="tel", name="phone", id="order-phone", placeholder="Введите телефон", required)
+
+          fieldset.form-fieldset
+            legend Способ получения:
+            .form-row
+              label.form-label Доставка:
+              .form-group
+                label(for="express").check
+                  input(type="radio", name="delivery", id="express", value="Курьерская доставка", checked).check__input
+                  span.check__box
+                  | Курьерская доставка
+                label(for="pickup").check
+                  input(type="radio", name="delivery", id="pickup", value="Самовывоз").check__input
+                  span.check__box
+                  | Самовывоз
+            .form-row
+              label(for="order-address").form-label Ваш адрес:
+              input(type="text", name="address", id="order-address", placeholder="Введите ваш адрес")
+
+          fieldset.form-fieldset
+            legend Дата и время доставки:
+            .form-row.profile-order__form-row
+              .form-row
+                label(for="order-date").form-label Дата:
+                .form-input-icon
+                  input(type="text", name="date", id="order-date").profile-order__form-date
+                  +icon('calendar-2', 'profile-order__form-date-icon')
+              .form-row.form-row--full
+                label(for="order-time").form-label.form-label--sm Время:
+                select(name="time", id="order-time")
+                  option(value="с 6:00 до 20:00") с 6:00 до 20:00
+                  option(value="с 8:00 до 13:00") с 8:00 до 13:00
+                  option(value="с 13:00 до 15:00") с 13:00 до 15:00
+                  option(value="с 15:00 до 20:00") с 15:00 до 20:00
+
+          fieldset.form-fieldset
+            legend Способ оплаты:
+            .form-row
+              label.form-label Оплата:
+              .form-group
+                label(for="order-cash").check
+                  input(type="radio", name="payment", id="order-cash", value="Наличный расчет", checked).check__input
+                  span.check__box
+                  | Наличный расчет
+                label(for="order-card").check
+                  input(type="radio", name="payment", id="order-card", value="Безналичный расчет").check__input
+                  span.check__box
+                  | Безналичный расчет
+
+          fieldset.form-fieldset.profile-order__form-message
+            legend Комментарий к заказу:
+            .form-row
+              label(for="order-message").form-label Собщение:
+              textarea(name="message", id="order-message", placeholder="Ваш коментарий к заказу")
+
+          .form-btns
+            input(type="submit", value="Оформить заказ").btn
+
+      .col-lg-5
+        .summary
+          .summary__row
+            strong Продукты:
+            span 69 000 руб. 
+          .summary__items 2 наименования
+          .summary__row
+            strong Доставка:
+            span 1 000 руб. 
+          .summary__bottom
+            p
+              strong Ваш заказ:
+            .price
+              span.price__number 70 000
+              span.price__currency  Руб.

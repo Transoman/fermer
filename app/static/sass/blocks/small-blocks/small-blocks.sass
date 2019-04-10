@@ -5,6 +5,7 @@
 @import 'parallax'
 @import 'slider'
 @import 'region-list'
+@import 'summary'
 
 .simplebar-track.simplebar-vertical
   width: 1px
@@ -17,6 +18,7 @@
       opacity: 1
 
 .price
+  font-family: $ax-font
   color: $header-color
   &__number
     font-size: 30px
@@ -41,10 +43,22 @@
     fill: #fff
     +trans
 
+.remove-cart
+  &:hover, &:focus
+    .remove-cart
+      &__icon
+        fill: tomato
+  &__icon
+    width: 20px
+    height: 20px
+    fill: #a6a6a6
+    +trans
+
 .quantity
   display: flex
   align-items: center
   &__btn
+    position: relative
     width: 30px
     height: 30px
     padding: 0
@@ -52,16 +66,39 @@
     border-radius: 5px
     border: 1px solid $border-color
     color: $gray
+    font-size: 0
     +trans
     &:hover
       border-color: $accent
+      &::before, &::after
+        background-color: $accent
     &:focus
       outline: none
       border-color: $accent
       background-color: $accent
-      color: #fff
-    &--minus
-      line-height: 25px
+      &::before, &::after
+        background-color: #fff
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 8px
+      height: 1px
+      background-color: $gray
+      +trans
+    &--plus
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) rotate(90deg)
+        width: 8px
+        height: 1px
+        background-color: $gray
+        +trans
   &__val
     width: 60px
     padding: 0 5px
@@ -72,6 +109,7 @@
     font-size: 18px
     color: $gray
     text-align: center
+    background: none
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button
       appearance: none

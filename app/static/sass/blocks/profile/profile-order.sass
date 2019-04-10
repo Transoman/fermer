@@ -1,0 +1,39 @@
+.profile-order
+  .summary
+    margin-left: 70px
+    +r(1200)
+      margin-left: 0
+  &__form
+    +r(992)
+      margin-bottom: 50px
+    &-date
+      &-icon
+        position: absolute
+        right: 20px
+        top: 50%
+        margin-top: -8px
+        width: 18px
+        height: 16px
+        fill: $gray
+    &-message
+      .form-row
+        align-items: flex-start
+      .form-label
+        padding-top: 10px
+    &-row
+      margin-bottom: 0
+      +r(767)
+        flex-direction: column
+        .form-label--sm
+          width: 130px
+    .btn
+      max-width: 270px
+      width: 100%
+      +r(576)
+        max-width: none
+    .form-btns
+      margin-top: 40px
+  .form-group.form-row
+    +r(1200)
+      .form-label
+        width: 80px

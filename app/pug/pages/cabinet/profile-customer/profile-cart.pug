@@ -1,0 +1,94 @@
+section.profile
+  .container
+    h2.section-title Корзина
+
+    .profile-cart
+      table.profile-cart__table
+        thead
+          tr
+            th Фото
+            th Название
+            th К-во
+            th Стоимость
+            th(colspan="2") Поставщик
+        tbody
+          tr
+            td(data-label="Фото").product-thumbnail
+              a(href="product.html")
+                img(src="static/images/content/product-sm-1.jpg", alt="")
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+            td(data-label="Название").product-name
+              a(href="product.html") Яйца куринные
+            td(data-label="К-во").product-quantity
+              .quantity
+                button(type="button").quantity__btn.quantity__btn--minus -
+                input(type="number", name="quantity", id="quantity", value="100", min="1", step="1", pattern="[0-9]*", inputmode="numeric").quantity__val
+                button(type="button").quantity__btn.quantity__btn--plus +
+            td(data-label="Стоимость").product-price 17 500 <span>руб.</span>
+            td(data-label="Поставщик").product-manufacturer ООО «Михайловские Цыплята»
+            td.product-remove
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+          tr
+            td(data-label="Фото").product-thumbnail
+              a(href="product.html")
+                img(src="static/images/content/product-sm-1.jpg", alt="")
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+            td(data-label="Название").product-name
+              a(href="product.html") Яйца куринные
+            td(data-label="К-во").product-quantity
+              .quantity
+                button(type="button").quantity__btn.quantity__btn--minus -
+                input(type="number", name="quantity", id="quantity", value="100", min="1", step="1", pattern="[0-9]*", inputmode="numeric").quantity__val
+                button(type="button").quantity__btn.quantity__btn--plus +
+            td(data-label="Стоимость").product-price 17 500 <span>руб.</span>
+            td(data-label="Поставщик").product-manufacturer ООО «Михайловские Цыплята»
+            td.product-remove
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+          tr
+            td(data-label="Фото").product-thumbnail
+              a(href="product.html")
+                img(src="static/images/content/product-sm-1.jpg", alt="")
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+            td(data-label="Название").product-name
+              a(href="product.html") Яйца куринные
+            td(data-label="К-во").product-quantity
+              .quantity
+                button(type="button").quantity__btn.quantity__btn--minus -
+                input(type="number", name="quantity", id="quantity", value="100", min="1", step="1", pattern="[0-9]*", inputmode="numeric").quantity__val
+                button(type="button").quantity__btn.quantity__btn--plus +
+            td(data-label="Стоимость").product-price 17 500 <span>руб.</span>
+            td(data-label="Поставщик").product-manufacturer ООО «Михайловские Цыплята»
+            td.product-remove
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+          tr
+            td(data-label="Фото").product-thumbnail
+              a(href="product.html")
+                img(src="static/images/content/product-sm-1.jpg", alt="")
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+            td(data-label="Название").product-name
+              a(href="product.html") Яйца куринные
+            td(data-label="К-во").product-quantity
+              .quantity
+                button(type="button").quantity__btn.quantity__btn--minus -
+                input(type="number", name="quantity", id="quantity", value="100", min="1", step="1", pattern="[0-9]*", inputmode="numeric").quantity__val
+                button(type="button").quantity__btn.quantity__btn--plus +
+            td(data-label="Стоимость").product-price 17 500 <span>руб.</span>
+            td(data-label="Поставщик").product-manufacturer ООО «Михайловские Цыплята»
+            td.product-remove
+              a(href="#").remove-cart
+                +icon('remove', 'remove-cart__icon')
+
+      .profile-cart__totals
+        .profile-cart__total
+          span Ваш заказ:
+          .price
+            span.price__number 70 000
+              span.price__currency  Руб.
+        a(href="#").btn.profile-cart__checkout Оформить заказ

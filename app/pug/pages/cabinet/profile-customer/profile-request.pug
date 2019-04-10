@@ -13,14 +13,14 @@ section.profile
           label(for="product-date").form-label Когда нужно:
           input(type="text", name="product_date", id="product-date", placeholder="Введите дату", required)
         .form-row
-          label(for="product-date").form-label Оплата:
+          label.form-label Оплата:
           .form-group
             label(for="cash").check
-              input(type="radio", name="payment", id="cash", checked).check__input
+              input(type="radio", name="payment", id="cash", value="Наличный расчет", checked).check__input
               span.check__box
               | Наличный расчет
             label(for="card").check
-              input(type="radio", name="payment", id="card").check__input
+              input(type="radio", name="payment", id="card", value="Безналичный расчет").check__input
               span.check__box
               | Безналичный расчет
         .profile-form__btn.text-center

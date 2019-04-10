@@ -8,24 +8,58 @@
       margin-left: -5px
   &-group
     position: relative
+    & > *:not(:last-child)
+      margin-right: 40px
   &-row
     display: flex
     align-items: center
     margin-bottom: 20px
+    width: 100%
     +r(576)
       flex-wrap: wrap
+    & > .form-row
+      margin-right: 40px
+      +r(767)
+        margin-right: 0
+      &:last-child
+        margin-right: 0
+    &--full
+      flex-grow: 1
   &-label
+    width: 130px
+    flex-shrink: 0
     margin: 0
     font-family: $ax-font
     color: $header-color
     cursor: pointer
     +r(576)
       margin-bottom: 5px
+    &--sm
+      width: 80px
+  &-fieldset
+    margin-bottom: 30px
+    +r(767)
+      margin-bottom: 10px
+    &:last-of-type
+      margin-bottom: 0
+  &-input-icon
+    position: relative
+    width: 100%
+
+legend
+  margin-bottom: 30px
+  font-family: $ax-font
+  font-size: 20px
+  color: $social-color
+  +r(767)
+    font-size: 18px
+    margin-bottom: 20px
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"],
+select,
 textarea
   width: 100%
   padding: 12px 20px

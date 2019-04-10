@@ -358,7 +358,7 @@ jQuery(document).ready(function($) {
     });
   }
 
-  pickmeup('#product-date', {
+  pickmeup('#product-date, #order-date', {
     format: 'd.m.Y',
     hide_on_select: true,
     locale: 'ru'

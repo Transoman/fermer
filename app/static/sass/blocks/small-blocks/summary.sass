@@ -1,0 +1,44 @@
+.summary
+  background-color: $bg-color
+  padding: 40px 30px
+  +r(576)
+    padding: 20px 15px
+  &__row
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 15px
+    font-family: $ax-font
+    padding: 0 20px
+    +r(576)
+      padding: 0 10px
+    strong
+      color: $header-color
+  &__items
+    font-size: 14px
+    margin-bottom: 25px
+    padding: 0 20px
+    +r(576)
+      padding: 0 10px
+  &__bottom
+    position: relative
+    margin-top: 25px
+    padding: 20px 20px 0
+    border-top: 1px solid $border-color
+    font-family: $ax-font
+    color: $header-color
+    z-index: 1
+    +r(576)
+      padding: 20px 10px 0
+    &::before
+      content: ''
+      position: absolute
+      right: -10px
+      bottom: -20px
+      width: 100px
+      height: 100px
+      background: url(../images/general/icon-field.svg) no-repeat center / contain
+      z-index: -1
+    .price
+      &__number
+        font-size: 36px

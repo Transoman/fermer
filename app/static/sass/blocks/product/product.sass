@@ -5,3 +5,38 @@
 .s-product
   &__btns
     margin-top: 30px
+
+.product
+  &-thumbnail
+    min-width: 110px
+    max-width: 110px
+    +r(992)
+      max-width: none
+    img
+      border-radius: 5px
+  &-quantity
+    .quantity
+      &__val
+        font-size: 14px
+        line-height: 1
+      &__btn
+        border-radius: 50%
+        width: 20px
+        height: 20px
+        line-height: 18px
+  &-price
+    white-space: nowrap
+    span
+      font-size: 12px
+      text-transform: uppercase
+  &-remove
+    width: 60px
+    +r(992)
+      width: 0
+      padding: 0 !important
+    .remove-cart
+      opacity: 0
+      visibility: hidden
+      +trans
+      +r(992)
+        display: none
