@@ -208,3 +208,28 @@ section
 
 .bg-color
   background-color: $bg-color
+
+.bg-img
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    z-index: -2
+    left: -300px
+    bottom: -70px
+    width: 500px
+    height: 310px
+    background: url(../images/general/salat-left.png) no-repeat center / contain
+    +r(576)
+      display: none
+  &::after
+    content: ''
+    position: absolute
+    z-index: -2
+    right: -300px
+    bottom: -70px
+    width: 500px
+    height: 310px
+    background: url(../images/general/salat-right.png) no-repeat center / contain
+    +r(576)
+      display: none

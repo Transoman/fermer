@@ -1,0 +1,27 @@
+section.profile
+  .container
+    .profile-form.bg-img
+      h2 Хочу купить продукты
+      form(action="#")
+        .form-row
+          label(for="product").form-label Продукт:
+          input(type="text", name="product", id="product", placeholder="Введите название продукции", required)
+        .form-row
+          label(for="product-count").form-label Продукт:
+          input(type="text", name="product_count", id="product-count", placeholder="Введите количество", required)
+        .form-row
+          label(for="product-date").form-label Когда нужно:
+          input(type="text", name="product_date", id="product-date", placeholder="Введите дату", required)
+        .form-row
+          label(for="product-date").form-label Оплата:
+          .form-group
+            label(for="cash").check
+              input(type="radio", name="payment", id="cash", checked).check__input
+              span.check__box
+              | Наличный расчет
+            label(for="card").check
+              input(type="radio", name="payment", id="card").check__input
+              span.check__box
+              | Безналичный расчет
+        .profile-form__btn.text-center
+          input(type="submit", value="Отправить заявку").btn

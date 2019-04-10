@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
   // Modal
   $('.modal').popup({
     transition: 'all 0.3s',
-    scrolllock: true,
+    // scrolllock: true,
     onclose: function() {
       $(this).find('label.error').remove();
     },
