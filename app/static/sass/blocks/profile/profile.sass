@@ -1,7 +1,6 @@
 @import 'profile-hero'
 @import 'profile-info'
 @import 'profile-form'
-@import 'profile-history'
 @import 'profile-thanks'
 @import 'profile-order'
 @import 'profile-cart'
@@ -52,3 +51,35 @@
   &--order
     .section-title
       text-align: center
+
+.profile-table-totals
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-top: 60px
+  border-top: 1px solid $border-color
+  padding: 20px
+  +r(767)
+    flex-direction: column
+  &__total
+    display: flex
+    align-items: flex-end
+    +r(767)
+      margin-bottom: 20px
+    +r(567)
+      flex-direction: column
+      align-items: center
+    > span
+      font-family: $ax-font
+      font-weight: 600
+      color: $header-color
+      margin-right: 20px
+      +r(567)
+        margin-right: 0
+        margin-bottom: 10px
+    .price
+      &__number
+        font-size: 36px
+  &__checkout
+    max-width: 270px
+    width: 100%

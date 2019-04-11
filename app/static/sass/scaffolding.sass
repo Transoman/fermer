@@ -90,9 +90,14 @@ table
   tbody
     font-family: $ax-font
     tr
-      
+      +r(992)
+        border-bottom: 1px solid $border-color
+        &:last-child
+          border: 0
       &:nth-child(even)
         background-color: $bg-color
+        +r(992)
+          background-color: #fff
         td
           padding:
             top: 14px
@@ -102,22 +107,15 @@ table
         top: 22px
         bottom: 22px
       +r(992)
-        padding: 14px 20px 14px 140px
+        padding: 14px 20px 14px 120px
         display: block
-      &:nth-child(2)
-        width: 31.62%
-        +r(992)
-          width: 100%
-      // &:last-child
-      //   width: 33.33%
-      //   +r(992)
-      //     width: 100%
-      +r(992)
         &::before
           content: attr(data-label)
           position: absolute
           left: 20px
           font-family: $main-font
+        &:nth-child(even)
+          background-color: $bg-color
   tfoot
     font-family: $ax-font
     font-size: 16px

@@ -7,7 +7,8 @@ var svg4everybody = require('svg4everybody'),
     Swiper = require('swiper'),
     SimpleBar = require('simplebar'),
     pickmeup = require('pickmeup'),
-    tabslet = require('tabslet');
+    tabslet = require('tabslet'),
+    IMask = require('imask');
 
 jQuery(document).ready(function($) {
 
@@ -38,7 +39,10 @@ jQuery(document).ready(function($) {
   $('.small-search__link').click(function(e) {
     e.preventDefault();
     $('.small-search__body').addClass('is-active');
-    $('.small-search__form input[type="text"]').focus();
+    setTimeout(function() {
+      $('.small-search__form input[type="text"]').focus();
+    }, 200);
+    
   });
 
   $('.small-search__close').click(function() {
@@ -190,11 +194,11 @@ jQuery(document).ready(function($) {
   $('.qview .review-slider').each(function(i, el) {
     var $this = $(this);
     $this.addClass("review-slider-" + i);
-    $this.parent().find(".swiper-button-prev").addClass("button-prev-" + i);
-    $this.parent().find(".swiper-button-next").addClass("button-next-" + i);
+    // $this.parent().find(".swiper-button-prev").addClass("button-prev-" + i);
+    // $this.parent().find(".swiper-button-next").addClass("button-next-" + i);
   
-    var btnNext = '.button-next-' + i;
-    var btnPrev = '.button-prev-' + i;
+    // var btnNext = '.button-next-' + i;
+    // var btnPrev = '.button-prev-' + i;
 
     var reviewSlider = 'reviewSlider' + i;
   
@@ -358,11 +362,13 @@ jQuery(document).ready(function($) {
     });
   }
 
-  pickmeup('#product-date, #order-date', {
-    format: 'd.m.Y',
-    hide_on_select: true,
-    locale: 'ru'
-  });
+  if ($('#product-date').length || $('#order-date').length) {
+    pickmeup('#product-date, #order-date', {
+      format: 'd.m.Y',
+      hide_on_select: true,
+      locale: 'ru'
+    });
+  }
 
   // Qty buton
   function changeProductQuantity() {
@@ -477,6 +483,19 @@ jQuery(document).ready(function($) {
   $('.small-filters__search input').keyup(function() {
     tableSearch();
   });
+
+  // Input mask
+  var inputsPhone = document.querySelectorAll('input[type="tel"]');
+
+  if (inputsPhone.length) {
+    var maskOptions = {
+      mask: '+{7} (000) 000-00-00'
+    };
+
+    for (var i = 0; i < inputsPhone.length; i++) {
+      new IMask(inputsPhone[i], maskOptions);
+    }
+  }
 
   // SVG
   svg4everybody({});

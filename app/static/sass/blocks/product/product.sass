@@ -14,7 +14,12 @@
       max-width: none
     img
       border-radius: 5px
+  &-name
+    width: 31.62%
+    +r(992)
+      width: 100%
   &-quantity
+    white-space: nowrap
     .quantity
       &__val
         font-size: 14px
@@ -29,6 +34,8 @@
     span
       font-size: 12px
       text-transform: uppercase
+  &-date
+    white-space: nowrap
   &-remove
     width: 60px
     +r(992)

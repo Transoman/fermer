@@ -25,32 +25,39 @@ section.profile
           th Поставщик
       tbody
         tr
-          td(data-label="Дата").profile-history__date 01 февраля 2019
-          td(data-label="Название") Яйца куринные
-          td(data-label="К-во").profile-history__count 100 шт.
-          td(data-label="Стоимость").profile-history__price 17 500 руб. 
-          td(data-label="Поставщик") ООО «Михайловские Цыплята»
+          td(data-label="Дата").product-date 01 февраля 2019
+          td(data-label="Название").product-name Яйца куринные
+          td(data-label="К-во").product-quantity 100 шт.
+          td(data-label="Стоимость").product-price 17 500 руб. 
+          td(data-label="Поставщик").product-manufacturer ООО «Михайловские Цыплята»
         tr
-          td(data-label="Дата").profile-history__date 01 февраля 2019
-          td(data-label="Название") Тушки куриные
-          td(data-label="К-во").profile-history__count 100 шт.
-          td(data-label="Стоимость").profile-history__price 36 000 руб. 
-          td(data-label="Поставщик") ООО «Михайловские Цыплята»
+          td(data-label="Дата").product-date 01 февраля 2019
+          td(data-label="Название").product-name Тушки куриные
+          td(data-label="К-во").product-quantity 100 шт.
+          td(data-label="Стоимость").product-price 36 000 руб. 
+          td(data-label="Поставщик").product-manufacturer ООО «Михайловские Цыплята»
         tr
-          td(data-label="Дата").profile-history__date 04 февраля 2019
-          td(data-label="Название") Базилик
-          td(data-label="К-во").profile-history__count 5 кг.
-          td(data-label="Стоимость").profile-history__price 11 000 руб. 
-          td(data-label="Поставщик") ООО «ФрешЗелень»
+          td(data-label="Дата").product-date 04 февраля 2019
+          td(data-label="Название").product-name Базилик
+          td(data-label="К-во").product-quantity 5 кг.
+          td(data-label="Стоимость").product-price 11 000 руб. 
+          td(data-label="Поставщик").product-manufacturer ООО «ФрешЗелень»
         tr
-          td(data-label="Дата").profile-history__date 04 февраля 2019
-          td(data-label="Название") Салат «Рукола»
-          td(data-label="К-во").profile-history__count 25 кг.
-          td(data-label="Стоимость").profile-history__price 55 750 руб. 
-          td(data-label="Поставщик") ООО «ФрешЗелень»
-      tfoot
-        tr
-          td(colspan="2") Итого за февраль:
-            .price
-              span.price__number 121 150
-                span.price__currency  руб.
+          td(data-label="Дата").product-date 04 февраля 2019
+          td(data-label="Название").product-name Салат «Рукола»
+          td(data-label="К-во").product-quantity 25 кг.
+          td(data-label="Стоимость").product-price 55 750 руб. 
+          td(data-label="Поставщик").product-manufacturer ООО «ФрешЗелень»
+      //- tfoot
+      //-   tr
+      //-     td(colspan="2") Итого за февраль:
+      //-       .price
+      //-         span.price__number 121 150
+      //-           span.price__currency  руб.
+
+    .profile-table-totals
+      .profile-table-totals__total
+          span Итого за февраль:
+          .price
+            span.price__number 121 150
+              span.price__currency  Руб.
