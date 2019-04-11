@@ -1,0 +1,52 @@
+section.profile
+  .container
+    h2.section-title Подробная информация
+
+    .row
+      .col-sm-6.col-md-4.col-lg-3.profile-info
+        span.profile-info__title Вид деятельности:
+        .profile-info__content
+          +icon('guarantee', 'profile-info__icon')
+          p
+            strong Молочное хозяйство
+          ul
+            li Код ОКВЭД 01.41
+            li Код ОКВЭД 10.51
+      .col-sm-6.col-md-4.col-lg-3.profile-info
+        span.profile-info__title Телефон для связи:
+        .profile-info__content
+          +icon('call', 'profile-info__icon')
+          a(href="tel:+74957552513") +7 (495) 755-25-13
+          span.profile-info__desc (c 8:00 до 22:00)
+      .col-sm-6.col-md-4.col-lg-3.profile-info
+        span.profile-info__title Адрес для доставки:
+        .profile-info__content
+          +icon('meeting-point', 'profile-info__icon')
+          p Московская область, г. Орехово-Зуево, улица Гагарина, 26
+      .col-sm-6.col-md-4.col-lg-3.profile-info
+        span.profile-info__title На сайте:
+        .profile-info__content
+          +icon('calendar', 'profile-info__icon')
+          p с 20.02.2019 г.
+
+    .profile__row
+      .profile__row-left
+        .general-slider.swiper-container
+          .swiper-wrapper
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/seller-slider-1.jpg", alt="")
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/seller-slider-1.jpg", alt="")
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/seller-slider-1.jpg", alt="")
+            .general-slider__item.swiper-slide
+              img(src="static/images/content/seller-slider-1.jpg", alt="")
+          .swiper-pagination
+          .swiper-button-prev
+          .swiper-button-next
+      .profile__row-right
+        .profile__info
+          h3.profile__info-title Информация о фермере
+          .profile__info-text(data-simplebar)
+            p В Конаковском районе Тверской области располагается цех по переработке молока, владеет и управляет которым семья Ильичевых. Валерий и Елена занимаются производством молочных продуктов с 2004 года. Они обучались и работали на базе Института молочной промышленности, здесь прошли первые пять лет их профессиональной деятельности. Затем  в городе Конаково Тверской области  семья отреставрировала трехэтажное здание, построенное еще в 1936 году, и установила там оборудование для переработки молока, так началось собственное производство.
+            p В Конаковском районе Тверской области располагается цех по переработке молока, владеет и управляет которым семья Ильичевых. Валерий и Елена занимаются производством молочных продуктов с 2004 года. Они обучались и работали на базе Института молочной промышленности, здесь прошли первые пять лет их профессиональной деятельности. Затем  в городе Конаково Тверской области  семья отреставрировала трехэтажное здание, построенное еще в 1936 году, и установила там оборудование для переработки молока, так началось собственное производство.

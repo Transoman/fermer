@@ -497,6 +497,18 @@ jQuery(document).ready(function($) {
     }
   }
 
+  $('.product-card__action').click(function() {
+    $(this).toggleClass('is-active');
+  });
+
+  $('.product-card').click(function(e) {
+    if (e.target.offsetParent != undefined) {
+      if (e.target.offsetParent.classList[0] != 'product-card__action' && e.target.offsetParent.classList[0] != 'product-card__action-body') {
+        $(this).find('.product-card__check').toggleClass('product-card__check--checked');
+      }
+    }
+  });
+
   // SVG
   svg4everybody({});
 

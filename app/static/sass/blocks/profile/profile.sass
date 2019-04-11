@@ -48,9 +48,45 @@
       padding-right: 30px
       +r(576)
         padding-right: 20px
+  &__btns
+    margin-top: 30px
+    +r(480)
+      margin-top: 0
+    & > *:not(:last-child)
+      margin-right: 30px
+      +r(480)
+        margin-right: 0
+        margin-bottom: 10px
+    .btn
+      width: 150px
+      +r(480)
+        width: 100%
   &--order
     .section-title
       text-align: center
+  .product-card
+    &__img-wrap
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-color: rgba($header-color, 0.8)
+        opacity: 0
+        visibility: hidden
+        z-index: 1
+        +trans
+    &:hover
+      .product-card
+        &__img-wrap
+          &::before
+            opacity: 1
+            visibility: visible
+        &__action, &__check
+          opacity: 1
+          visibility: visible
 
 .profile-table-totals
   display: flex
