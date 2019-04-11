@@ -4,12 +4,21 @@
       tr
         +trans
         &:hover
-          box-shadow: 0 10px 20px rgba($header-color, 0.1)
+          +rmin(993)
+            box-shadow: 0 10px 20px rgba($header-color, 0.1)
           .remove-cart
             opacity: 1
             visibility: visible
+          .product-status__icon
+            +rmin(993)
+              opacity: 0
+              visibility: hidden
+          .product-action
+            +rmin(993)
+              opacity: 1
+              visibility: visible
     .product-thumbnail
-      .remove-cart
+      .remove-cart, .product-action
         display: none
         +r(992)
           display: block
@@ -17,3 +26,8 @@
           top: 14px
           right: 20px
           z-index: 1
+          opacity: 1
+          visibility: visible
+      .product-action
+        +r(992)
+          top: 27px

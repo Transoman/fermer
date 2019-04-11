@@ -201,7 +201,28 @@ table
   flex: 1 0 auto
 
 .section-title
+  position: relative
   margin-bottom: 40px
+  &__count
+    display: inline-block
+    vertical-align: top
+    min-width: 30px
+    padding: 0 5px
+    height: 30px
+    margin-left: 10px
+    border-radius: 25px
+    background-image: linear-gradient($light-green, $accent)
+    font-family: $main-font
+    font-size: 14px
+    font-weight: 600
+    color: #fff
+    text-align: center
+    line-height: 30px
+    +r(992)
+      height: 20px
+      min-width: 20px
+      line-height: 20px
+      font-size: 11px
 
 .section-head
   display: flex

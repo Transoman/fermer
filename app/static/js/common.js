@@ -497,7 +497,7 @@ jQuery(document).ready(function($) {
     }
   }
 
-  $('.product-card__action').click(function() {
+  $('.product-card__action, .product-action').click(function() {
     $(this).toggleClass('is-active');
   });
 

@@ -47,3 +47,78 @@
       +trans
       +r(992)
         display: none
+  &-status
+    width: 60px
+    +r(992)
+      width: 100%
+    &__icon
+      width: 20px
+      height: 20px
+      fill: $accent
+      +trans
+    &--unconfirmed
+      .product-status
+        &__icon
+          fill: #ff4027
+  &-action
+    position: absolute
+    top: 50%
+    right: 20px
+    margin-top: -3px
+    +trans
+    opacity: 0
+    visibility: hidden
+    z-index: 1
+    &.is-active
+      .product-action
+        &__body
+          opacity: 1
+          visibility: visible
+    &__head
+      display: flex
+      align-items: center
+      cursor: pointer
+      & > *:not(:last-child)
+        margin-right: 6px
+    &__dot
+      width: 6px
+      height: 6px
+      background-color: #a6a6a6
+      border-radius: 50%
+    &__body
+      position: absolute
+      top: calc(100% + 10px)
+      right: 0
+      width: 190px
+      padding: 15px 20px
+      background-color: #fff
+      border-radius: 5px
+      box-shadow: 0 5px 15px rgba($header-color, 0.15)
+      z-index: 1
+      +trans
+      opacity: 0
+      visibility: hidden
+      &::before
+        content: ''
+        position: absolute
+        top: -5px
+        right: 10px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 5px 5px 5px
+        border-color: transparent transparent #ffffff transparent
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+        li
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+        a
+          font-family: $main-font
+          font-size: 14px
+          color: $gray
+          &:hover, &:focus
+            color: $accent
