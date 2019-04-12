@@ -1,0 +1,80 @@
+section.profile
+  .container
+    h2.section-title Редактировать профиль
+
+    .form-profile
+      form(action="#", method="post", enctype="multipart/form-data").form-profile__form
+        .row
+          .col-xl-9
+            .form-row
+              label(for="profile-name").form-label Название или ФИО:
+              input(type="text", name="profile_name", id="profile-name", placeholder="Введите название компании", required)
+            .form-row.form-row--align-top
+              label(for="profile-small-description").form-label Краткое описание:
+              textarea(name="profile_small_description", id="profile-small-description", placeholder="Описание продаваемой продукции", required)
+            .form-row
+              label(for="profile-activity").form-label Вид деятельности:
+              input(type="text", name="profile_activity", id="profile-activity", placeholder="Введите вид деятельности", required)
+            .form-row
+              label(for="profile-okved").form-label Код ОКВЭД:
+              .form-profile__form-row-okved
+                .form-profile__form-row-add
+                  input(type="text", name="profile_okved[]", id="profile-okved", placeholder="КОД", required).form-profile__form-okved
+                  a(href="#").form-profile__form-add.add-okved
+                    +icon('plus')
+                .clone-okved
+
+            .form-row.form-profile__form-contact
+              .form-row.form-profile__form-phone
+                label(for="profile-phone").form-label Телефон:
+                input(type="tel", name="profile_phone", id="profile-phone", placeholder="Ваш телефон", required)
+              .form-row
+                label(for="profile-time").form-label Удобное время:
+                .form-profile__form-row-time
+                  .form-profile__form-row-add
+                    input(type="text", name="profile_time[]", id="profile-time", placeholder="с 6:00 до 20:00", required).form-profile__form-time
+                    a(href="#").form-profile__form-add.add-time
+                      +icon('plus')
+                  .clone-time
+            .form-row
+              label(for="profile-address").form-label Адрес производства:
+              .form-profile__form-row-address
+                .form-profile__form-row-add
+                  input(type="text", name="profile_address[]", id="profile-address", placeholder="Введите адрес производства или склада", required).form-profile__form-address
+                  a(href="#").form-profile__form-add.add-address
+                    +icon('plus')
+                .clone-address
+            .form-row.form-row--align-top
+              label(for="profile-description").form-label Подробная информация:
+              textarea(name="profile_description", id="profile-description", placeholder="Подробная информация о компании", required)
+
+            .form-row.form-profile__form-files
+              .form-row.form-row--align-top.form-profile__form-avatar
+                label(for="profile-avatar").form-label Добавить аватар:
+                .upload
+                  input(type="file", name="profile_avatar", id="profile-avatar").upload__input
+                  label(for="profile-avatar", title="Выберите файл").upload__label
+                    +icon('plus', 'upload__icon')
+                    span.upload__output
+              .form-profile__form-bg
+                label(for="profile-bg").form-label Добавить фон:
+                .upload
+                  input(type="file", name="profile_bg", id="profile-bg").upload__input
+                  label(for="profile-bg", title="Выберите файл").upload__label
+                    +icon('plus', 'upload__icon')
+                    span.upload__output
+
+            .form-row.form-row--align-top.form-profile__form-photos
+              label(for="profile-photos").form-label Добавить фото бизнеса:
+              .upload
+                .upload__wrap
+                  .upload__left
+                    input(type="file", name="profile_photos", id="profile-photos", multiple).upload__input
+                    label(for="profile-photos", title="Выберите файлы").upload__label
+                      +icon('plus', 'upload__icon')
+                  .upload__right
+                    .upload__thumbnails
+
+                    p.upload__note
+                      +icon('picture', 'upload__note-icon')
+                      |  Добавить фото продукта (не более 10 шт.)

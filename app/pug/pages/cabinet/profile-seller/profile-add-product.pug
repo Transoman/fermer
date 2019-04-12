@@ -1,0 +1,67 @@
+section.profile
+  .container
+    h2.section-title Добавить продукт
+
+    .form-product
+      form(action="#", method="post", enctype="multipart/form-data").form-product__form
+        .form-product__form-container
+          .form-product__form-left
+            .form-row
+              label(for="product-name").form-label Название:
+              input(type="text", name="product_name", id="product-name", placeholder="Введите название продукции", required)
+            .form-row.form-row--align-top
+              label(for="product-description").form-label Описание:
+              textarea(name="product_description", id="product-description", placeholder="Описание продаваемой продукции", required)
+            .form-row.form-product__form-row
+              .form-row
+                label(for="product-count").form-label Количество:
+                .form-product__form-wrap.form-product__form-wrap--count
+                  input(type="number", name="product_count_from", id="product-count", placeholder="от", required)
+                  input(type="number", name="product_count_to", placeholder="до", required)
+                  select(name="product_count_unit")
+                    option(value="кг") Кг.
+                    option(value="г") г.
+                    option(value="тон") Тон
+                    option(value="л") Л.
+              .form-row
+                label(for="product-price").form-label.form-label--sm Цена:
+                .form-product__form-wrap.form-product__form-wrap--price
+                  input(type="number", name="product_price", id="product-price" placeholder="1 000 руб.", required)
+                  select(name="product_count_unit")
+                    option(value="кг") 1 Кг.
+                    option(value="г") 1 г.
+                    option(value="тон") 1 Тона
+                    option(value="л") 1 Л.
+            .form-row
+              label(for="product-shipping-date").form-label Дата отгрузки:
+              .form-product__form-wrap.form-product__form-wrap--shipping-date
+                input(type="text", name="product_shipping_date_from", id="product-shipping-date", required, autocomplete="off").datepicker
+                input(type="text", name="product_shipping_date_to", required, autocomplete="off").datepicker
+            .form-row
+              label(for="product-address").form-label Адрес:
+              input(type="text", name="product_address", id="product-address", placeholder="Введите адрес производства или склада", required)
+            .form-row
+              label.form-label Доставка:
+              .form-group
+                label(for="express").check
+                  input(type="radio", name="delivery", id="express", value="Курьерская доставка", checked).check__input
+                  span.check__box
+                  | Курьерская доставка
+                label(for="pickup").check
+                  input(type="radio", name="delivery", id="pickup", value="Самовывоз").check__input
+                  span.check__box
+                  | Самовывоз
+
+          .form-product__form-right
+            .upload
+              input(type="file", name="files", id="file", multiple).upload__input
+              label(for="file", title="Выберите файлы").upload__label
+                +icon('plus', 'upload__icon')
+              .upload__thumbnails
+
+              p.upload__note
+                +icon('picture', 'upload__note-icon')
+                |  Добавить фото продукта (не более 10 шт.)
+
+        .form-product__form-btns
+          input(type="submit", value="Добавить новий продукт").btn

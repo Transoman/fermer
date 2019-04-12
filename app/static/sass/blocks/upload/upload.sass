@@ -1,0 +1,111 @@
+.upload
+  &__wrap
+    display: flex
+    +r(767)
+      display: block
+  &__left
+    margin-right: 40px
+    +r(767)
+      margin-right: 0
+  &__input
+    @extend .visually-hidden
+  &__label
+    position: relative
+    width: 100%
+    height: 270px
+    border-radius: 5px
+    background-color: $border-color
+    cursor: pointer
+    overflow: hidden
+    +r(576)
+      height: 160px
+    &:hover, &:focus
+      .upload
+        &__icon
+          fill: $social-color
+  &__output
+    height: 100%
+    img
+      height: 100%
+      width: 100%
+      object-fit: cover
+  &__icon
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 52px
+    height: 52px
+    fill: #bfbfbf
+    +trans
+  &__thumbnails
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -5px
+    &-item
+      position: relative
+      width: 20%
+      margin-bottom: 20px
+      padding: 0 5px
+      .upload
+        &__icon
+          width: 20px
+          height: 20px
+        &__main-remove
+          svg
+            width: 20px
+            height: 20px
+            margin-bottom: 0
+      img
+        width: 100%
+        height: 100%
+        background-color: $border-color
+        border-radius: 5px
+  &__note
+    padding: 0 10px
+    font-size: 14px
+    color: $gray
+    text-decoration: underline
+    &-icon
+      width: 20px
+      height: 16px
+      fill: $gray
+      margin-right: 10px
+  &__main
+    &-img
+      position: relative
+      height: 100%
+      border-radius: 5px
+      overflow: hidden
+      cursor: pointer
+      &:hover
+        .upload
+          &__main-remove
+            opacity: 1
+            visibility: visible
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &-remove
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: rgba($header-color, 0.8)
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      color: rgba(#fff, 0.5)
+      opacity: 0
+      visibility: hidden
+      +trans
+      svg
+        width: 52px
+        height: 52px
+        margin-bottom: 15px
+        fill: rgba(#fff, 0.5)
+      p
+        margin: 0

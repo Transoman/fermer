@@ -1,0 +1,97 @@
+.form-product
+  &__form
+    textarea
+      height: 200px
+    &-container
+      display: flex
+      flex-wrap: wrap
+    &-left
+      width: 68.37%
+      +r(992)
+        width: 100%
+    &-right
+      width: 29.91%
+      margin-left: auto
+      +r(992)
+        width: 100%
+    &-row
+      +r(1200)
+        display: block
+        & > *:not(:last-child)
+          margin-right: 0
+          margin-bottom: 20px
+        .form-label--sm
+          width: 130px
+    &-wrap
+      display: flex
+      &--count
+        max-width: 310px
+        // flex-shrink: 0
+        +r(1200)
+          max-width: none
+          flex-grow: 1
+        & > *:nth-child(1)
+          border-radius: 5px 0 0 5px
+          &:focus
+            position: relative
+            z-index: 1
+        & > *:nth-child(2)
+          border-radius: 0
+          margin-left: -1px
+          &:focus
+            position: relative
+            z-index: 1
+        & > *:nth-child(3)
+          border-radius: 0 5px 5px 0
+          margin-left: -1px
+          &:focus
+            position: relative
+            z-index: 1
+      &--price
+        flex-grow: 1
+        & > *:nth-child(1)
+          border-radius: 5px 0 0 5px
+          text-transform: uppercase
+          width: 130px
+          +r(1200)
+            width: 100%
+          &:focus
+            position: relative
+            z-index: 1
+        & > *:nth-child(2)
+          border-radius: 0 5px 5px 0
+          margin-left: -1px
+          width: 100px
+          &:focus
+            position: relative
+            z-index: 1
+      &--shipping-date
+        max-width: 310px
+        +r(767)
+          max-width: none
+        +r(480)
+          display: block
+          width: 100%
+        & > *:nth-child(1)
+          border-radius: 5px 0 0 5px
+          text-transform: uppercase
+          +r(480)
+            border-radius: 5px 5px 0 0
+          &:focus
+            position: relative
+            z-index: 1
+        & > *:nth-child(2)
+          border-radius: 0 5px 5px 0
+          margin-left: -1px
+          +r(480)
+            border-radius: 0 0 5px 5px
+            margin-left: 0
+            margin-top: -1px
+          &:focus
+            position: relative
+            z-index: 1
+    &-btns
+      margin-top: 30px
+      .btn
+        +r(576)
+          width: 100%

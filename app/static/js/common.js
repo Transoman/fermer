@@ -370,6 +370,17 @@ jQuery(document).ready(function($) {
     });
   }
 
+  if ($('.datepicker').length) {
+    for (var i = 0; i < $('.datepicker').length; i++) {
+      pickmeup($('.datepicker')[i], {
+        format: 'd.m.Y',
+        hide_on_select: true,
+        locale: 'ru',
+        default_date: false
+      });
+    }
+  }
+
   // Qty buton
   function changeProductQuantity() {
     $(document).on( 'click', '.quantity__btn', function(e) {
@@ -507,6 +518,114 @@ jQuery(document).ready(function($) {
         $(this).find('.product-card__check').toggleClass('product-card__check--checked');
       }
     }
+  });
+
+  // File upload
+  function handleFileSelect(files) {
+    var files = this.files;
+    var numFiles = files.length;
+    var maxFiles = 10;
+
+    if (numFiles <= maxFiles) {
+      var preview = document.querySelector('.upload__thumbnails');
+      preview.innerHTML = '';
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+
+        if (!file.type.match('image.*')) {
+          continue;
+        }
+        var reader = new FileReader();
+        
+        var itemWrap = document.createElement('div');
+        itemWrap.classList.add('upload__thumbnails-item');
+        var img = document.createElement('img');
+
+        img.file = file;
+        itemWrap.appendChild(img);
+        preview.appendChild(itemWrap);
+        reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+        reader.readAsDataURL(file);
+      }
+    }
+    else {
+      alert('Загрузить можно не более 10 файлов');
+    }
+  }
+
+  $('.upload__main-img').click(function(e) {
+    e.preventDefault();
+    if ($(this).parent()[0].className == 'upload__thumbnails-item') {
+      $(this).parent().remove();
+    }
+    else {
+      $(this).remove();
+
+    }
+  });
+
+  if (document.querySelector('#profile-photos, #file') != null) {
+    document.querySelector('#profile-photos, #file').addEventListener('change', handleFileSelect, false);
+  }
+
+  if (document.querySelector('#profile-avatar') != null) {
+      document.querySelector('#profile-avatar').addEventListener('change', handleFileSelectAvatar, false);
+  }
+
+  function handleFileSelectAvatar(files) {
+    var file = this.files[0];
+    var preview = document.querySelector('#profile-avatar + .upload__label').querySelector('.upload__output');
+    preview.innerHTML = '';
+
+    if (!file.type.match('image.*')) {
+      return;
+    }
+    var reader = new FileReader();
+    var img = document.createElement('img');
+
+    img.file = file;
+    preview.appendChild(img);
+    reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+    reader.readAsDataURL(file);
+  }
+
+  if (document.querySelector('#profile-bg') != null) {
+    document.querySelector('#profile-bg').addEventListener('change', handleFileSelectBg, false);
+  }
+
+  function handleFileSelectBg(files) {
+    var file = this.files[0];
+    var preview = document.querySelector('#profile-bg + .upload__label').querySelector('.upload__output');
+    preview.innerHTML = '';
+
+    if (!file.type.match('image.*')) {
+      return;
+    }
+    var reader = new FileReader();
+    var img = document.createElement('img');
+
+    img.file = file;
+    preview.appendChild(img);
+    reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+    reader.readAsDataURL(file);
+  }
+
+  $('.add-okved').click(function(e) {
+    e.preventDefault();
+    var links = $('.form-profile__form-okved').length
+    $('#profile-okved').clone().attr('id', 'profile-okved-' + links).appendTo('.clone-okved');
+  });
+
+  $('.add-time').click(function(e) {
+    e.preventDefault();
+    var links = $('.form-profile__form-time').length
+    $('#profile-time').clone().attr('id', 'profile-time-' + links).appendTo('.clone-time');
+  });
+
+  $('.add-address').click(function(e) {
+    e.preventDefault();
+    var links = $('.form-profile__form-address').length
+    $('#profile-address').clone().attr('id', 'profile-address-' + links).appendTo('.clone-address');
   });
 
   // SVG
