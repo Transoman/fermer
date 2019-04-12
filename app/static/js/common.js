@@ -54,9 +54,15 @@ jQuery(document).ready(function($) {
     if (evt.keyCode == 27) {
       $('.small-search__body').removeClass('is-active');
       $('.nav-toggle').removeClass('is-active');
-    $('.mobile-menu').removeClass('open');
+      $('.mobile-menu').removeClass('open');
+      $('.user-menu__body').removeClass('is-active');
     }
   };
+
+  // Toggle user menu
+  $('.user-menu__head').click(function() {
+    $('.user-menu__body').toggleClass('is-active');
+  });
 
   // Parallax
   new Rellax('.rellax', {
@@ -439,8 +445,30 @@ jQuery(document).ready(function($) {
   // Filter toggle list
   $('.filter-search__btn').click(function(e) {
     e.preventDefault();
-    $(this).toggleClass('is-active');
-    $(this).next().toggleClass('is-active');
+    if ($(this).hasClass('is-active')) {
+      $(this).removeClass('is-active');
+      $(this).next().removeClass('is-active');
+    }
+    else {
+      $('.filter-search__btn').removeClass('is-active');
+      $('.filter-search__btn').next().removeClass('is-active');
+      $(this).addClass('is-active');
+      $(this).next().addClass('is-active');
+    }
+  });
+
+  $('.small-filters__btn').click(function(e) {
+    e.preventDefault();
+    if ($(this).hasClass('is-active')) {
+      $(this).removeClass('is-active');
+      $(this).next().removeClass('is-active');
+    }
+    else {
+      $('.small-filters__btn').removeClass('is-active');
+      $('.small-filters__btn').next().removeClass('is-active');
+      $(this).addClass('is-active');
+      $(this).next().addClass('is-active');
+    }
   });
 
   $('.filter-search__toggle-filters').click(function(e) {

@@ -54,9 +54,22 @@ header.header(class= headerClass)
             span.small-cart__currency Руб.
 
       .user-menu.header__user-menu
-        .user-menu__btns
-          a(href="#").btn.btn--transp.modal-login_open Вход
-          a(href="#").btn.modal-register_open Регистрация
+        if !login
+          .user-menu__btns
+            a(href="#").btn.btn--transp.modal-login_open Вход
+            a(href="#").btn.modal-register_open Регистрация
+        if login
+          .user-menu__head
+            img(src="static/images/content/avatar.jpg", alt="").user-menu__pic
+            span.user-menu__title ООО «МилкиВей»
+          .user-menu__body
+            ul
+              li
+                a(href="#") Личный кабинет
+              li
+                a(href="#") Редактировать профиль
+              li
+                a(href="#") Выйти
 
       button.nav-toggle
         span.nav-toggle__line

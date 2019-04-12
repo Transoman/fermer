@@ -2,7 +2,6 @@
   .small-filters__category
     .small-filters__category-head
       button(type="button").small-filters__btn Категория товаров
-    .small-filters__category-body
       ul.dropdown-list
         li
           a(href="#") Молочные продукты
@@ -28,7 +27,11 @@
   .small-filters__radius
     .small-filters__radius-head
       button(type="button").small-filters__btn Радиус, км
-    .small-filters__radius-body
+      ul.dropdown-list
+        li
+          a(href="#") 1 Км
+        li
+          a(href="#") 2 Км
   .small-filters__btns
     a(href="#").small-filters__link
       +icon('location', 'small-filters__link-icon')

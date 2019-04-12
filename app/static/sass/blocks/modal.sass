@@ -6,7 +6,9 @@
   background: #fff url(../images/general/modal-bg.png) no-repeat center bottom
   transform: scale(0.8)
   +r(576)
-    max-width: 290px
+    // max-width: 290px
+    max-width: none
+    width: 90%
     padding-right: 15px
     padding-left: 15px
   &__close
@@ -114,6 +116,10 @@
     +r(576)
       .btn
         margin: 0
+    .form-inline
+      +r(576)
+        flex-direction: column
+        align-items: flex-start
     .form-group
       max-width: 335px
       width: 100%
@@ -136,6 +142,8 @@
     .form-label
       width: 115px
       flex-shrink: 0
+      +r(576)
+        width: 100%
     .form-group
       padding-left: 20px
       +r(576)

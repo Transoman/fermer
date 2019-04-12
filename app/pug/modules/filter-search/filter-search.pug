@@ -3,7 +3,6 @@ form(action="#" method="get").filter-search
     .filter-search__category
       .filter-search__category-head
         button(type="button").filter-search__btn Категория товаров
-      .filter-search__category-body
         ul.dropdown-list
           li
             a(href="#") Молочные продукты
@@ -29,7 +28,11 @@ form(action="#" method="get").filter-search
     .filter-search__radius
       .filter-search__radius-head
         button(type="button").filter-search__btn Радиус, км
-      .filter-search__radius-body
+        ul.dropdown-list
+          li
+            a(href="#") 1 Км
+          li
+            a(href="#") 2 Км
 
     .filter-search__search
       input(type="text" name="product" placeholder="Введите названия...")

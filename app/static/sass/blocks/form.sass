@@ -39,7 +39,7 @@
     color: $header-color
     cursor: pointer
     +r(576)
-      width: auto
+      width: 100%
       margin-bottom: 5px
     &--sm
       width: 80px
@@ -62,11 +62,12 @@ legend
     font-size: 18px
     margin-bottom: 20px
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-input[type="number"],
+// input[type="text"],
+// input[type="email"],
+// input[type="tel"],
+// input[type="password"],
+// input[type="number"],
+input,
 select,
 textarea
   width: 100%
@@ -85,9 +86,10 @@ textarea
   &:focus
     border-color: $accent
     outline: none
-
 textarea
   height: 130px
+input[type="submit"]
+  width: auto
 
 input[type="checkbox"],
 input[type="radio"]

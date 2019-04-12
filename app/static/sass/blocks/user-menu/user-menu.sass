@@ -1,4 +1,5 @@
 .user-menu
+  position: relative
   &__btns
     & > *:not(:last-child)
       margin-right: 10px
@@ -7,3 +8,78 @@
       box-shadow: none
       &--transp
         padding: 9px 25px
+  &__head
+    position: relative
+    display: flex
+    align-items: center
+    cursor: pointer
+    padding-right: 45px
+    +r(767)
+      padding-right: 15px
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 30px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 4px 3px 0 3px
+      border-color: $accent transparent transparent transparent
+      +r(767)
+        right: 0
+    &:hover, &:focus
+      .user-menu
+        &__title
+          color: $accent
+  &__pic
+    border-radius: 5px
+    margin-right: 20px
+    +r(767)
+      margin-right: 0
+  &__title
+    max-width: 130px
+    font-size: 14px
+    font-weight: 600
+    color: $header-color
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+    +trans
+    +r(767)
+      display: none
+  &__body
+    position: absolute
+    right: 0
+    top: calc(100% + 10px)
+    width: 210px
+    padding: 15px 20px
+    background-color: #fff
+    border-radius: 5px
+    +trans
+    opacity: 0
+    visibility: hidden
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: -5px
+      right: 10px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 5px 5px 5px
+      border-color: transparent transparent #ffffff transparent
+    &.is-active
+      opacity: 1
+      visibility: visible
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        margin-bottom: 10px
+        &:last-child
+          margin-bottom: 0
+      a
+        font-size: 14px
