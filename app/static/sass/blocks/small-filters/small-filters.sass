@@ -33,16 +33,17 @@
     position: relative
     background: none
     border: none
-    padding: 0
+    padding: 0 20px 0 0
     font-size: 14px
     color: $gray
     +trans
     white-space: nowrap
     &::after
       content: ''
-      display: inline-block
-      vertical-align: middle
-      margin-left: 10px
+      position: absolute
+      right: 0
+      top: 50%
+      margin-top: -2px
       width: 8px
       height: 4px
       background: url(../images/general/icon-angle-down.svg) no-repeat center / contain
@@ -52,6 +53,14 @@
       .small-filters
         &__btn-icon
           fill: $accent
+    &.is-active
+      &::after
+        transform: rotate(-180deg)
+    span
+      display: block
+      max-width: 130px
+      overflow: hidden
+      text-overflow: ellipsis
     &-icon
       width: 18px
       height: 16px

@@ -11,6 +11,15 @@
   &__bottom
     position: relative
     padding: 10px 0
+    +trans
+    &.fixed
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      background-color: #fff
+      animation: slideDown 0.5s ease
+      box-shadow: 0 5px 15px rgba($header-color, 0.15)
     .container
       position: relative
   &__nav
@@ -76,3 +85,9 @@
             color: $accent
   &--inner
     box-shadow: 0 5px 15px rgba($header-color, 0.15)
+
+@keyframes slideDown
+  0%
+    transform: translateY(-100%)
+  100%
+    transform: translateY(0)
