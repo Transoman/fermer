@@ -1,0 +1,51 @@
+button(type="button").chat-toggle
+  +icon('chat', 'chat-toggle__icon')
+  span.chat-toggle__count 10
+
+.chat
+  button(type="button").chat__close
+    +icon('remove', 'chat__close-icon')
+  .chat__wrap
+    .chat__header
+      p.chat__header-title Напишите ваше сообщение
+      span.chat__header-operator-status Оператор онлайн
+
+    .chat__body
+      .chat__content(data-simplebar)
+        .chat__item
+          .chat__messages
+            .chat__messages-user ООО «МилкиВей»
+            .chat__message
+              .chat__message-time 13:07
+              .chat__message-content Здраствуйте!
+        .chat__item.chat__item--responder
+          .chat__messages
+            .chat__messages-user Менеджер Globafarmer
+            .chat__message
+              .chat__message-time 13:07
+              .chat__message-content Здравствуйте. Добро пожаловать в техническую поддержку чата JivoSite. Если у вас есть вопрос по работе нашего сервиса - спрашивайте, рад буду помочь)
+        .chat__item
+          .chat__messages
+            .chat__messages-user ООО «МилкиВей»
+            .chat__message
+              .chat__message-time 13:07
+              .chat__message-content Здраствуйте!
+        .chat__item.chat__item--responder
+          .chat__messages
+            .chat__messages-user Менеджер Globafarmer
+            .chat__message
+              .chat__message-time 13:07
+              .chat__message-content Здравствуйте. Добро пожаловать в техническую поддержку чата JivoSite. Если у вас есть вопрос по работе нашего сервиса - спрашивайте, рад буду помочь)
+
+    .chat__bottom
+      .chat__field-wrap
+        textarea(name="message", placeholder="Введи ваше сообщение и нажмите Enter").chat__field
+        .chat__btns
+          .chat__btns-item
+            button(type="button").chat__btn.chat__btn--emoji
+              +icon('emoji', 'chat__btn-icon')
+          .chat__btns-item
+            .chat__file
+              input(type="file", name="attach", id="attach").chat__file-field
+              label(for="attach").chat__file-label
+                +icon('attach', 'chat__btn-icon')

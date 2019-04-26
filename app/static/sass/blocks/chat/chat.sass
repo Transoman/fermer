@@ -1,0 +1,237 @@
+.chat
+  position: fixed
+  bottom: 20px
+  right: 50px
+  z-index: 100
+  max-width: 370px
+  width: 100%
+  +trans(transform, 0.5s)
+  transform: translateY(150%)
+  +r(480)
+    right: 15px
+    max-width: 260px
+  &.is-active
+    transform: translateY(0)
+  &__close
+    position: absolute
+    top: 0
+    left: -40px
+    width: 30px
+    height: 30px
+    padding: 0
+    background: none
+    border: 0
+    &:hover, &:focus
+      outline: none
+      .chat__close-icon
+        fill: $header-color
+    &-icon
+      width: 30px
+      height: 30px
+      fill: $general-color
+      +trans
+  &__wrap
+    border-radius: 5px
+    overflow: hidden
+    box-shadow: 0 10px 20px rgba($header-color, 0.15)
+    background-color: #fff
+  &__header
+    position: relative
+    padding: 15px 30px
+    background-color: $accent
+    background-image: linear-gradient(to right, $accent, $light-green)
+    font-size: 14px
+    color: #fff
+    +r(480)
+      padding-right: 20px
+      padding-left: 20px
+    &::after
+      content: ''
+      position: absolute
+      top: -15px
+      right: -15px
+      width: 50px
+      height: 50px
+      background: url('../images/general/circle.svg') no-repeat center / contain
+    &-title
+      margin: 0
+      &::after
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        width: 10px
+        height: 2px
+        margin-left: 10px
+        background-color: $selective-yellow
+    &-operator-status
+      color: #307326
+  &__body
+    padding: 30px 5px 30px 0
+    +r(576)
+      padding: 15px 5px 15px 0
+  &__content
+    max-height: 260px
+    padding: 0 15px 0 20px
+    +r(576)
+      max-height: 170px
+  &__bottom
+    padding: 20px
+    background-color: $bg-color
+  &__field
+    height: 90px
+    padding: 5px 60px 5px 20px
+    resize: none
+    &-wrap
+      position: relative
+  &__btns
+    position: absolute
+    top: 10px
+    right: 10px
+    z-index: 1
+    &-item
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+  &__btn
+    background: none
+    padding: 0
+    border: 0
+    &:focus
+      outline: none
+      .chat__btn-icon
+        fill: $footer-title-color
+    &-icon
+      width: 25px
+      height: 25px
+      fill: $border-color
+      +trans
+      &:hover, &:focus
+        fill: $footer-title-color
+  &__file
+    &-field
+      @extend .visually-hidden
+    &-label
+      cursor: pointer
+  &__item
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+    &--responder
+      .chat
+        &__messages
+          &-user
+            text-align: left
+            padding-right: 0
+            padding-left: 20px
+        &__message
+          flex-direction: row-reverse
+          &-time
+            margin:
+              right: 0
+              left: 20px
+          &-content
+            background-color: #e8ffe5
+            text-align: left
+            &::after
+              right: auto
+              left: -6px
+              transform: rotate(180deg)
+              border-color: transparent transparent transparent #e8ffe5
+  &__messages
+    &-user
+      margin-bottom: 5px
+      text-align: right
+      padding-right: 20px
+      font-size: 12px
+      color: #a6a6a6
+  &__message
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    &-time
+      margin-right: 20px
+      font-size: 12px
+      color: $border-color
+    &-content
+      position: relative
+      flex-grow: 1
+      padding: 8px 20px
+      background-color: $hover-bg
+      border-radius: 5px
+      font-size: 14px
+      color: $general-color
+      text-align: right
+      &::after
+        content: ''
+        position: absolute
+        right: -6px
+        top: 50%
+        margin-top: -6px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 6px 0 6px 6px
+        border-color: transparent transparent transparent $hover-bg
+
+.chat-toggle
+  position: fixed
+  right: 50px
+  bottom: 50px
+  z-index: 100
+  width: 80px
+  height: 80px
+  border-radius: 50%
+  border: 0
+  padding: 0
+  background-image: linear-gradient($candlelight, $selective-yellow)
+  box-shadow: 0 5px 15px rgba($selective-yellow, 0.5)
+  +r(767)
+    width: 50px
+    height: 50px
+    right: 20px
+    bottom: 20px
+  &:hover
+    &::before
+      background-image: linear-gradient(lighten($selective-yellow, 5%), $candlelight)
+  &::before
+    content: ''
+    position: absolute
+    top: 5px
+    right: 5px
+    bottom: 5px
+    left: 5px
+    background-image: linear-gradient($selective-yellow, $candlelight)
+    border-radius: inherit
+  &:focus
+    outline: none
+  &:active
+    &::before
+      background-image: linear-gradient(darken($selective-yellow, 5%), $candlelight)
+  &__icon
+    position: relative
+    width: 36px
+    height: 34px
+    fill: #fff
+    +r(767)
+      width: 22px
+      height: 20px
+  &__count
+    position: absolute
+    right: -5px
+    top: -5px
+    z-index: 1
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-image: linear-gradient($light-green, $accent)
+    font-size: 14px
+    text-align: center
+    line-height: 30px
+    color: #fff
+    +r(767)
+      width: 25px
+      height: 25px
+      line-height: 25px
+      font-size: 12px

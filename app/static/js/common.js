@@ -684,6 +684,17 @@ jQuery(document).ready(function($) {
     $('#profile-address').clone().attr('id', 'profile-address-' + links).appendTo('.clone-address');
   });
 
+  // Chat
+  $('.chat-toggle').click(function(e) {
+    e.preventDefault();
+    $('.chat').toggleClass('is-active');
+  });
+
+  $('.chat__close').click(function(e) {
+    e.preventDefault();
+    $('.chat').removeClass('is-active');
+  });
+
   // SVG
   svg4everybody({});
 
