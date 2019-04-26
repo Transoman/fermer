@@ -1,0 +1,12 @@
+extends template/main
+
+block variables
+  - var title = 'Результаты поиска'
+  - var pageClass = ''
+  - var quickView = true
+
+block content
+
+  include pages/search/hero
+  include pages/search/product
+  include modules/banner-form/banner-form

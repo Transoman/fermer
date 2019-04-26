@@ -1,0 +1,1819 @@
+section.s-product
+  .container
+    .row
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-1_open Быстрый просмотр
+            img(src="static/images/content/product-1.jpg", alt="Молоко коровье 6 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко коровье 6 %
+              span.product-card__manufacturer от ООО «МилкиВей»
+            .product-card__bottom
+              .price
+                span.price__number 65
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-1.modal.qview.general
+            button.modal__close.qview-1_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко коровье 3,2 - 6 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-1") Описание
+                li
+                  a(href="#qview-about-1") О фермере
+                li
+                  a(href="#qview-review-1") Отзывы
+              .qview-tabs__content#qview-description-1
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-1
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-1
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-2_open Быстрый просмотр
+            img(src="static/images/content/product-2.jpg", alt="Молоко козье цельное")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко козье цельное
+              span.product-card__manufacturer от ООО «КозПродИнк»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-2.modal.qview.general
+            button.modal__close.qview-2_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко козье цельное
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-2") Описание
+                li
+                  a(href="#qview-about-2") О фермере
+                li
+                  a(href="#qview-review-2") Отзывы
+              .qview-tabs__content#qview-description-2
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-2
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-2
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-3_open Быстрый просмотр
+            img(src="static/images/content/product-3.jpg", alt="Молоко топленое 3,2 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко топленое 3,2 %
+              span.product-card__manufacturer от ООО «КозПродИнк»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-3.modal.qview.general
+            button.modal__close.qview-3_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко топленое 3,2 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-3") Описание
+                li
+                  a(href="#qview-about-3") О фермере
+                li
+                  a(href="#qview-review-3") Отзывы
+              .qview-tabs__content#qview-description-3
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-3
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-3
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-4_open Быстрый просмотр
+            img(src="static/images/content/product-4.jpg", alt="Молоко коровье 4,5 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко коровье 4,5 %
+              span.product-card__manufacturer от ООО «Добровольское»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-4.modal.qview.general
+            button.modal__close.qview-4_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко коровье 4,5 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-4") Описание
+                li
+                  a(href="#qview-about-4") О фермере
+                li
+                  a(href="#qview-review-4") Отзывы
+              .qview-tabs__content#qview-description-4
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-4
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-4
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-5_open Быстрый просмотр
+            img(src="static/images/content/product-1.jpg", alt="Молоко коровье 6 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко коровье 6 %
+              span.product-card__manufacturer от ООО «МилкиВей»
+            .product-card__bottom
+              .price
+                span.price__number 65
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-5.modal.qview.general
+            button.modal__close.qview-5_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко коровье 3,2 - 6 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-5") Описание
+                li
+                  a(href="#qview-about-5") О фермере
+                li
+                  a(href="#qview-review-5") Отзывы
+              .qview-tabs__content#qview-description-5
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-5
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-5
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-6_open Быстрый просмотр
+            img(src="static/images/content/product-2.jpg", alt="Молоко козье цельное")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко козье цельное
+              span.product-card__manufacturer от ООО «КозПродИнк»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-6.modal.qview.general
+            button.modal__close.qview-6_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко козье цельное
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-6") Описание
+                li
+                  a(href="#qview-about-6") О фермере
+                li
+                  a(href="#qview-review-6") Отзывы
+              .qview-tabs__content#qview-description-6
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-6
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-6
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-7_open Быстрый просмотр
+            img(src="static/images/content/product-3.jpg", alt="Молоко топленое 3,2 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко топленое 3,2 %
+              span.product-card__manufacturer от ООО «КозПродИнк»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-7.modal.qview.general
+            button.modal__close.qview-7_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко топленое 3,2 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-7") Описание
+                li
+                  a(href="#qview-about-7") О фермере
+                li
+                  a(href="#qview-review-7") Отзывы
+              .qview-tabs__content#qview-description-7
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-7
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-7
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-8_open Быстрый просмотр
+            img(src="static/images/content/product-4.jpg", alt="Молоко коровье 4,5 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко коровье 4,5 %
+              span.product-card__manufacturer от ООО «Добровольское»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-8.modal.qview.general
+            button.modal__close.qview-8_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко коровье 4,5 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-8") Описание
+                li
+                  a(href="#qview-about-8") О фермере
+                li
+                  a(href="#qview-review-8") Отзывы
+              .qview-tabs__content#qview-description-8
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-8
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-8
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-9_open Быстрый просмотр
+            img(src="static/images/content/product-1.jpg", alt="Молоко коровье 6 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко коровье 6 %
+              span.product-card__manufacturer от ООО «МилкиВей»
+            .product-card__bottom
+              .price
+                span.price__number 65
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-9.modal.qview.general
+            button.modal__close.qview-9_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко коровье 3,2 - 6 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-9") Описание
+                li
+                  a(href="#qview-about-9") О фермере
+                li
+                  a(href="#qview-review-9") Отзывы
+              .qview-tabs__content#qview-description-9
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-9
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-9
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-10_open Быстрый просмотр
+            img(src="static/images/content/product-2.jpg", alt="Молоко козье цельное")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко козье цельное
+              span.product-card__manufacturer от ООО «КозПродИнк»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-10.modal.qview.general
+            button.modal__close.qview-10_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко козье цельное
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-10") Описание
+                li
+                  a(href="#qview-about-10") О фермере
+                li
+                  a(href="#qview-review-10") Отзывы
+              .qview-tabs__content#qview-description-10
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-10
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-10
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-11_open Быстрый просмотр
+            img(src="static/images/content/product-3.jpg", alt="Молоко топленое 3,2 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко топленое 3,2 %
+              span.product-card__manufacturer от ООО «КозПродИнк»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-11.modal.qview.general
+            button.modal__close.qview-11_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко топленое 3,2 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-11") Описание
+                li
+                  a(href="#qview-about-11") О фермере
+                li
+                  a(href="#qview-review-11") Отзывы
+              .qview-tabs__content#qview-description-11
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-11
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-11
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .product-card.col-md-6.col-lg-4.col-xl-3
+        .product-card__inner
+          .product-card__img-wrap
+            if dates
+              span.product-card__dates 01.02 - 12.02
+            if quickView
+              a(href="#").product-card__qview.qview-12_open Быстрый просмотр
+            img(src="static/images/content/product-4.jpg", alt="Молоко коровье 4,5 %")
+          .product-card__body
+            .product-card__head
+              .rating
+                .rating__group
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star.rating__star--fill
+                  span.rating__star
+              h3.product-card__title
+                a(href="product.html") Молоко коровье 4,5 %
+              span.product-card__manufacturer от ООО «Добровольское»
+            .product-card__bottom
+              .price
+                span.price__number 95
+                  span.price__currency  руб.
+                span.price__desc (за 1 литр)
+              a(href="#").btn.btn--transp.product-card__cart
+                +icon('cart', 'product-card__cart-icon')
+
+          #qview-12.modal.qview.general
+            button.modal__close.qview-12_close Close
+            .general__wrap
+              .general__left
+                .general-slider.swiper-container
+                  .swiper-wrapper
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                    .general-slider__item.swiper-slide
+                      img(src="static/images/content/product-detail.jpg", alt="")
+                  .swiper-pagination
+                  .swiper-button-prev
+                  .swiper-button-next
+
+              .general__right
+                h2.general__title Молоко коровье 4,5 %
+                span.general__manufacturer от ООО «МилкиВей»
+                .rating
+                  .rating__group
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star.rating__star--fill
+                    span.rating__star
+                  span.rating__caption 684 отзыва
+                .general__descr
+                  p Отборное фермерское молоко от коров Швицкой породы. Жирное, вкусное, сытное, с приятным запахом.
+                .general__action
+                  .price
+                    span.price__number 95
+                      span.price__currency  руб.
+                    span.price__desc  (за 1 литр)
+                  .general__action-row
+                    .quantity
+                      button(type="button").quantity__btn.quantity__btn--plus +
+                      input(type="number", name="quantity", value="1000", min="1", step="1").quantity__val
+                      button(type="button").quantity__btn.quantity__btn--minus -
+
+                    a(href="#").btn.add-cart В корзину
+                      +icon('cart', 'add-cart__icon')
+
+            .qview-tabs
+              ul.qview-tabs__list
+                li
+                  a(href="#qview-description-12") Описание
+                li
+                  a(href="#qview-about-12") О фермере
+                li
+                  a(href="#qview-review-12") Отзывы
+              .qview-tabs__content#qview-description-12
+                .row
+                  .col-md-4.col-lg-4
+                    .general__info-list
+                      .general__info-item
+                        span.general__info-label Могу продать:
+                        p.general__info-content
+                          +icon('pallet', 'general__info-icon')
+                          | от 10 до 1 000 л.
+                      .general__info-item
+                        span.general__info-label Готов отгрузить:
+                        p.general__info-content
+                          +icon('calendar', 'general__info-icon')
+                          | с 20.02 до 05.03.2019 г.
+                      .general__info-item
+                        span.general__info-label Способ доставки:
+                        p.general__info-content
+                          +icon('package', 'general__info-icon')
+                          | Курьерская доставка <br>Самовывоз
+                      .general__info-item
+                        span.general__info-label Адрес производства:
+                        p.general__info-content
+                          +icon('point', 'general__info-icon')
+                          | Московская область, Орехово-Зуево, <br>улица Гагарина, 26
+
+                  .col-md-8.col-lg-8
+                    .general__info-desc
+                      .general__info-text(data-simplebar, data-simplebar-auto-hide="false")
+                        p В нашем хозяйстве 60 дойных коров швицкой породы. Молоко жирное, вкусное, с приятным запахом.
+                        p Сразу после дойки молоко подогревается до 80 градусов. Это самая щадящая пастеризация, которой вполне достаточно, чтобы убить большинство бактерий, даже если они каким-то чудом попали в наше молоко. Но по большей части таким образом мы боремся со скоровременным скисанием молока: продлеваем жизнь продукта с 2 до 3 суток.
+                        p Если Вы пожелаете, мы пришлем Вам непастеризованное «живое» молоко. Просто укажите это в примечании к заказу. А в случае если молоко Вам не понравится, вернем деньги без проблем.
+              .qview-tabs__content#qview-about-12
+                p Невероятно вкусные молочные продукты, изготовленные исключительно из отборного молока по авторской рецептуре, Вас приятно удивят. Высокое качество ингредиентов и строгий контроль на производстве - вот залог успеха ООО «МилкиВей».
+              .qview-tabs__content#qview-review-12
+                .review-slider.swiper-container
+                  .swiper-wrapper
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                    .swiper-slide.review-card
+                      .review-card__inner
+                        .review-card__top
+                          img(src="static/images/content/user-2.jpg", alt="").review-card__pic
+                          .review-card__head
+                            h3.review-card__name Ирина Ткачук
+                            .rating
+                              .rating__group
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star.rating__star--fill
+                                span.rating__star
+                              span.rating__caption 04.02.2018
+                        .review-card__body
+                          p Спасибо большое за доставку.Была очень удивлена как был товар упакован.Брала айву 5кг. и 1кг. сливы хочу сказать с весом все четко недовеса нет буду и дальше сотрудничать с вами. Рекомендую!!!
+                  .swiper-pagination
+
+      .col-md-12.text-center.s-product__btns
+        a(href="#").btn.btn--transp Показать еще
+
+  img.rellax.parallax-1(src="static/images/general/tomato.png", alt="")
