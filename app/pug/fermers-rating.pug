@@ -1,0 +1,11 @@
+extends template/main
+
+block variables
+  - var title = 'Рейтинг фермеров'
+  - var pageClass = ''
+
+block content
+
+  include pages/fermers-rating/hero
+  include pages/fermers-rating/fermers-list
+  include modules/banner-form/banner-form
