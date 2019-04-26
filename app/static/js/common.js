@@ -358,7 +358,6 @@ jQuery(document).ready(function($) {
   if ($('.small-filters__dates-body').length) {
 
     pickmeup('.small-filters__dates-body', {
-      flat: true,
       mode: 'range',
       format: 'd.m.Y',
       hide_on_select: true,
@@ -377,7 +376,7 @@ jQuery(document).ready(function($) {
 
     $('.small-filters__btn-date').click(function(e) {
       e.preventDefault();
-      $('.small-filters__dates-body').toggleClass('is-active');
+      pickmeup('.small-filters__dates-body').show();
     });
 
     document.querySelector('.small-filters__dates-body').addEventListener('pickmeup-change', function (e) {
@@ -474,7 +473,7 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $('.small-filters__btn').click(function(e) {
+  $('.small-filters__btn:not(.small-filters__btn-date)').click(function(e) {
     e.preventDefault();
     if ($(this).hasClass('is-active')) {
       $(this).removeClass('is-active');
@@ -488,6 +487,18 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Close element when clicked anywhere
+  $(document).click(function(e) {
+    if ($(e.target).closest('.small-filters__btn:not(.small-filters__btn-date)').length) return;
+    $('.small-filters__btn').removeClass('is-active');
+    $('.small-filters__btn').next().removeClass('is-active');
+
+    if ($(e.target).closest('.filter-search__btn').length) return;
+    $('.filter-search__btn').removeClass('is-active');
+    $('.filter-search__btn').next().removeClass('is-active');
+    event.stopPropagation();
+  });
+
   $('.filter-search__toggle-filters').click(function(e) {
     e.preventDefault();
     $('.filter-search').toggleClass('is-active');
@@ -496,7 +507,7 @@ jQuery(document).ready(function($) {
 
   $('.dropdown-list a').click(function(e) {
     e.preventDefault();
-    $('.dropdown-list li').removeClass('is-active')
+    $(this).parent().siblings().removeClass('is-active');
     var val = $(this).text();
     $(this).parent().addClass('is-active');
     $(this).parents('ul').prev().find('span').text(val);
